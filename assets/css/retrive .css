@@ -137,7 +137,7 @@
           height: 165vh !important;
       }
       #experience1.internship-section1{
-        height: 146vw;
+        height: 112vw;
         width: 100%;
         margin-top: -80px;
       }
@@ -208,8 +208,9 @@
     }
     .skills_section {
       height: 280vw !important;
-      margin-top: 40px !important;
+      margin-top: -100px !important;
       width: fit-content;
+      margin-bottom: -150px;
     }
     .education {
       height: 170vw !important;
@@ -265,10 +266,39 @@ p.fst-italic{
   margin-bottom: 20px;
   margin-top: -150px;
 }
+.about {
+  margin-top: 10px;
+  background-color: hwb(211 73% 5%);
+  height: 237vw;
+}
+.about .section-title h2{
+  margin-top: 30px;
+  margin-bottom: -60px;
+}
+.about .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: hsl(314, 92%, 38%);
+  margin-top: -10px !important;
+}
 div.row{
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 15px;
+  text-align: center;
+}
+.row ul {
+  text-align: center;
+  margin-left: 60px;
+}
+ul.nav-links{
+  padding: 0;
+    display: grid;
+    margin: 0;
+    list-style-type: none;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 250px !important;
 }
 .btn-icon {
   justify-content: center;
@@ -443,6 +473,7 @@ element.style {
 @media only screen and (max-width: 600px) {
   .internship-section .education-item h2 {
       font-size: 23px;
+      margin-top: -50px;
   }
   .timeline-date{
      font-size: 10px;
@@ -510,8 +541,8 @@ element.style {
 #experience.internship-section {
   text-align: center;
   width: 100% !important;
-  height: 296vw !important;
-  margin-left: -10px !important;
+  height: 220vw !important;
+  margin-left: -2px !important;
 }
 .education-item h2 {
 font-weight: 700;

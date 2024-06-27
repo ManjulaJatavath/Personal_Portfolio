@@ -824,8 +824,8 @@ body.dark-mode .rightSection img {
           margin-top: 0px 0px;
 
       }
-      .left{
-        margin-top: 0px;
+      div.name{
+        margin-left: -50px;
       }
   }
   .projects {
