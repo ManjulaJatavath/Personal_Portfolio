@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .blog-box {
+            background: linear-gradient(45deg, #ff69b4, #000000);
+            border: 4px solid;
+            border-image: linear-gradient(45deg, #ff69b4, #000000) 1;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            color: #fff;
+            overflow: hidden;
+            transition: transform 0.4s ease-in-out;
+            display: flex;
+        }
+
+        .blog-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img img {
+            width: 40%;
+            height: fit-content;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            object-fit: cover;
+        }
+        .blog-img {
+            display: flex;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h4.title {
+            margin-top: 0;
+            font-size: 20px;
+            color: blue;
+        }
+
+        .blog-content p.description {
+            margin-bottom: 10px;
+            color: yellow; /* Adjusted text color for better readability */
+        }
+
+        .blog-content h6,
+        .blog-content p {
+            margin-bottom: 5px;
+            color: #ffffff; /* Adjusted text color for better readability */
+        }
+
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Define the animation */
+        @keyframes dance {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .blog-box.active {
+            animation: dance 1s infinite; 
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Welcome to My Blogs</h2>
+                <p>You can find the latest information on this page (not updated, it's ongoing).</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\python.jpeg" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">Python</h4>
+                            <p class="description">Python is an amazing programming language.</p>
+                            <h6>Posted By: <b style="color:black">Manjula Jatavath</b></h6>
+                            <p>Posted on: <b style="color:black">May 8, 2024, 9:17 a.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\django.png" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">Django</h4>
+                            <p class="description">Django is an amazing Python framework, I loved it.</p>
+                            <h6>Posted By: <b style="color:black">Ravikumar</b></h6>
+                            <p>Posted on: <b style="color:black">May 23, 2024, 2:30 p.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\mysql.png" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">MySQL</h4>
+                            <p class="description">MySQL is an open-source relational database management system (RDBMS).</p>
+                            <h6>Posted By: <b style="color:black">Aruna</b></h6>
+                            <p>Posted on: <b style="color:black">May 8, 2024, 9:16 a.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\postgresql.jpeg" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">PostgreSQL</h4>
+                            <p class="description">MySQL is an open-source relational database management system (RDBMS).</p>
+                            <h6>Posted By: <b style="color:black">Aruna</b></h6>
+                            <p>Posted on: <b style="color:black">May 8, 2024, 9:16 a.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\Html.png" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">HTML</h4>
+                            <p class="description">HTML (Hypertext Markup Language), It is used for creating web pages.</p>
+                            <h6>Posted By: <b style="color:black">Venki</b></h6>
+                            <p>Posted on: <b style="color:black">May 18, 2024, 8:15 a.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img src="assets\img\css.png" alt="Blog Image">
+                        </div>
+                        <div class="blog-content">
+                            <h4 class="title">CSS</h4>
+                            <p class="description">CSS is used for styling HTML pages to make user interfaces dynamic.</p>
+                            <h6>Posted By: <b style="color:black">Manju</b></h6>
+                            <p>Posted on: <b style="color:black">May 2, 2024, 2:30 p.m.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+    // JavaScript for hover effect animation
+    document.addEventListener("DOMContentLoaded", function() {
+        const blogBoxes = document.querySelectorAll('.blog-box');
+        blogBoxes.forEach(blogBox => {
+            blogBox.addEventListener('mouseenter', () => {
+                blogBox.classList.add('active');
+            });
+
+            blogBox.addEventListener('mouseleave', () => {
+                blogBox.classList.remove('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>

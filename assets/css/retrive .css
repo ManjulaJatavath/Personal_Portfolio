@@ -1,0 +1,674 @@
+
+  @media only screen and (max-width: 600px) {
+  #about-content {
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    width: 75%;
+    box-shadow: 5px 5px 6px 5px black;
+    background-color: #181816;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+    border-top-left-radius: 1% 1%;
+    border-bottom-right-radius: 1% 1%;
+    color: white;
+    border-width: initial;
+    margin-top: 30px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding: 13px;
+  }
+  .firstSection .leftSection, .firstSection .rightSection {
+    margin: 50px 0;
+  }
+  .firstSection {
+    margin: 100px 0;
+    padding: 0 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .firstSection .leftSection,
+  .firstSection .rightSection {
+      width: 70%;
+      margin: 20px 0px;
+  }
+  .firstSection {
+    margin: 100px 0;
+  }
+}
+  @media (max-width: 1024px) {
+    .header {
+        padding: 2rem 3%;
+    }
+  }
+
+/* education section */
+  @media (max-width: 600px) {
+    .education .timeline::after {
+      left: 8px;
+    }
+    
+    .education .timeline .timeline-item {
+      width: 100%;
+      padding-left: 38px;
+    }
+    
+    .education .timeline .timeline-item.left {
+      padding-right: 0;
+    }
+    
+    .education .timeline .timeline-item.right {
+      left: 40px;
+      /* padding-left: 38px; */
+    }
+    
+    .education .timeline .timeline-item.left::after, 
+    .experience .timeline .timeline-item.right::after {
+      left: 0;
+    }
+    
+    .education .timeline .timeline-item.left::before,
+    .education .timeline .timeline-item.right::before {
+      left: 18px;
+      border-color: transparent #dddddd transparent transparent;
+    }
+    
+    .education .timeline .timeline-item.left .timeline-date,
+    .education .timeline .timeline-item.right .timeline-date {
+      position: relative;
+      top: 0;
+      right: auto;
+      left: 0;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    
+    .education .timeline .timeline-item.left .timeline-text,
+    .education .timeline .timeline-item.right .timeline-text {
+      border-right: none;
+      border-left: 5px solid #dddddd;
+    }
+    .responsive-img{
+      display: block;
+      max-width: 80px; /* Adjust the size for mobile devices */
+      top: -0px; /* Reset the position */
+      position: relative;
+      margin: 0 auto; /* Center the image on smaller screens */
+    }
+    .education .timeline .timeline-item:nth-child(2) .responsive-img {
+      max-height: 80px;
+      image-rendering: auto; 
+      margin-top: 40px;/* Adjust the size for the second image on mobile */
+    }
+    .education .timeline .timeline-item:nth-child(3) .responsive-img { 
+      margin-top: 30px;/* Adjust the size for the second image on mobile */
+    }
+  
+    .education .timeline .timeline-item.left div[style*="float: right"],
+    .education .timeline .timeline-item.right div[style*="float: right"] {
+      float: none;
+      text-align: center;
+      margin-right: 0;
+    }
+    .education .timeline .timeline-item:nth-child(2) .timeline-text h2 {
+      font-size: 15px;
+    }
+    .education .timeline .timeline-item:nth-child(1) .timeline-text h2 {
+      font-size: 15px;
+    }
+    .education .timeline .timeline-item:nth-child(3) .timeline-text h2 {
+      font-size: 15px;
+    }
+    .education .timeline .timeline-item:nth-child(3) .timeline-text h2 {
+      font-size: 15px;
+    }
+    .education {
+      width: 100%; /* Ensure it doesn't collapse due to width issues */
+      overflow: visible; /* Avoid overflow hidden if it clips content */
+  }
+    }
+
+
+/* education end */
+
+    @media only screen and (max-width: 600px) {
+      .internship-section {
+          height: 165vh !important;
+      }
+      #experience1.internship-section1{
+        height: 146vw;
+        width: 100%;
+        margin-top: -80px;
+      }
+      .col-md-4 {
+        flex: 0 0 auto;
+        width: 100.33333333% !important;
+        margin-left: -0px !important;
+        margin-right: -40px !important;
+    }
+      .education {
+        height: 220vw !important;
+    }
+    #about-content{
+      margin-top: 40px;
+      width: 300px;
+    }
+    .typed {
+      font-size: 18px;
+    }
+    .education .timeline .timeline-text p {
+      margin-top: -15px !important;
+      margin-left: -17px !important;
+    }
+    
+    .education .timeline .timeline-text h4 {
+      font-size: 14px !important;
+    }
+    .responsive-img {
+      margin-top: -10px !important;
+      margin-right: -30px !important;
+    }
+    .education .timeline .timeline-item:nth-child(2) .timeline-text .responsive-img {
+      margin-top: 34px !important;
+    }
+    .education .timeline .timeline-item:nth-child(1) .timeline-text .responsive-img {
+      margin-top: 7px !important;
+    }
+    .education .timeline .timeline-item:nth-child(2) .timeline-text {
+      width: 120%;
+      margin-left: -40px !important;
+    }
+    .education .timeline .timeline-item:nth-child(2) .timeline-text p {
+      margin: -10px;
+      font-size: 13px !important;
+    }
+    .education .timeline .timeline-item:nth-child(3) .responsive-img {
+      margin-top: 8px !important;
+    }
+    .skills_main {
+      width: 100%;
+      display: inline !important;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 20px;
+      grid-column-gap: 100px;
+      margin-right: 120px;
+    }
+    .internship-section {
+      height: 115vh;
+      width: 100%;
+    }
+    #projects {
+      padding: 10px 0;
+      margin: 0 0 5px;
+      margin-top: -10px !important;
+    }
+    #skills{
+      width: 100% !important;
+    }
+    .skills_section {
+      height: 280vw !important;
+      margin-top: 40px !important;
+      width: fit-content;
+    }
+    .education {
+      height: 170vw !important;
+      margin-left: -10px;
+    }
+    .internship-section1 {
+      display: center;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      height: 35vh;
+      width: 100%;
+  }
+  .internship-section {
+    display: center;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+}
+.right ul {
+  flex-direction: row; 
+}
+
+.right ul li {
+  margin: 0 10px; 
+}
+.internship-section1 .timeline .timeline-text {
+  padding: 30px;
+  background: #ffffff;
+  position: relative;
+  border-right: 5px solid #dddddd;
+  box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
+  border-radius: 30px;
+  text-align: center;
+  padding: 20px;
+  height: fit-content;
+  margin-bottom: 100px;
+  margin-left: -10px;
+  margin-right: 0px;
+}
+.social-icons {
+  display: contents;
+  justify-content: center;
+  gap: 1px;
+  flex-wrap: wrap-reverse
+
+}
+p.fst-italic{
+  font-size: 15px;
+}
+.about .container .section-title {
+  margin-bottom: 20px;
+  margin-top: -150px;
+}
+div.row{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+.btn-icon {
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 2rem;
+  border: .2rem solid var(--border-color);
+  border-radius: 50%;
+  box-shadow: 0 .2rem .5rem var(--shadow-color);
+  font-size: 1rem;
+  background: var(--main-color);
+  background-clip: text;
+  color: transparent;
+  transition: .5s ease;
+}
+
+    }
+
+      @media (max-width: 1934.98px) {
+        .internship-section .timeline .timeline-item {
+            position: relative;
+            background: inherit;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 1934.98px) {
+        .internship-section .timeline .timeline-item {
+          position: relative;
+          background: inherit;
+          width: 100%;
+          margin-bottom: 30px;
+          height: 100px;
+        }
+        } 
+
+      /* @media (max-width: 1934.98px) {
+        .internship-section1 .timeline .timeline-item {
+          position: relative;
+          background: inherit;
+          width: 100%;
+          margin-bottom: 30px;
+      
+        }
+      
+        .internship-section {
+          display: center;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          width: 100%;
+      }
+      .internship-section1 {
+        display: center;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        height: 85vh;
+        width: 100%;
+      }
+      .container, .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 2px;
+      }
+        }
+
+
+
+      /* Media query for mobile devices */
+
+/* Media query for screens smaller than 768px (mobile devices) */
+@media only screen and (max-width: 600px) {
+element.style {
+  display: block;
+  max-width: 110px;
+  height: auto;
+  top: -30px;
+  position: relative;
+}}
+@media only screen and (max-width: 600px) {
+  /* Adjustments for smaller screens */
+  .btn-solid-lg {
+    background-color: hsl(32, 100%, 50%);
+    color: #fff;
+    padding: 10px 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.btn-outline-lg {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 3px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px;
+}
+  .firstSection {
+      margin: 50px 0; /* Reduced margin */
+      padding: 0 10px; /* Adjusted padding */
+  }
+
+  .education-item h2 {
+      font-size: 20px; /* Adjusted font size */
+  }
+
+  .education .timeline .timeline-item {
+      width: calc(100% - 20px); /* Adjusted width for full width with padding */
+      padding: 0 10px; /* Added padding */
+      margin-bottom: 20px; /* Reduced margin */
+  }
+  .education .timeline .timeline-text {
+      padding: 16px;
+      margin-top: 50px; /* Adjusted padding */
+  }
+
+  .education .timeline .timeline-text h2 {
+      font-size: 15px;
+      margin-left: 0px;
+      text-align: center; /* Adjusted font size */
+  }
+
+  .education .timeline .timeline-text h4 {
+      font-size: 15px; /* Adjusted font size */
+  }
+
+  .education .timeline .timeline-text p {
+      font-size: 14px;
+      margin: 0 auto; /* Adjusted font size */
+  }
+
+  .internship-section .education-item h2 {
+      font-size: 10px; /* Adjusted font size */
+  }
+
+  .education .timeline::after {
+      left: 10px; /* Adjusted left position */
+  }
+
+  .education .timeline .timeline-item.left .timeline-text,
+  .education .timeline .timeline-item.right .timeline-text {
+      margin-left: 0; /* Removed left margin */
+  }
+
+  .education .timeline .timeline-item.left .timeline-date,
+  .education .timeline .timeline-item.right .timeline-date {
+      left: 0; /* Adjusted left position */
+      text-align: center;
+      top: -15px; /* Align text to the left */
+  }
+
+  .education .timeline .timeline-item.left::before,
+  .education .timeline .timeline-item.right::before {
+      left: 10px; /* Adjusted left position */
+  }
+  .container, .container-fluid {
+      padding-left: 30px;         /* this education section  */
+      padding-right: 10px;
+  }
+  #projects .col1 .title h4 {
+      font-size: 20px; /* Adjusted font size */
+  }
+
+  #projects .col1 p {
+      font-size: 16px; /* Adjusted font size */
+  }
+}
+/* Adjustments for Internship Experience section on mobile devices */
+@media only screen and (max-width: 600px) {
+  .internship-section .education-item h2 {
+      font-size: 23px;
+  }
+  .timeline-date{
+     font-size: 10px;
+     font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .internship-section {
+      text-align: center; /* Center-align content */
+  }
+  .internship-section .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .internship-section .timeline .timeline-item {
+      width: 100%; /* Adjusted width for full width */
+      margin-bottom: 50px; /* Reduced margin */
+      text-align: center; /* Center-align text */
+      left: auto; /* Reset left alignment */
+  }
+
+  .internship-section .timeline .timeline-item.center {
+      padding-right: 0px; /* Reset padding */
+  }
+
+  .internship-section .timeline .timeline-text {
+      padding: 20px; /* Adjusted padding top  important*/
+      height: fit-content;
+      margin-bottom: -1px;
+      margin-left: -10px;
+      margin-right: 0px; 
+  }
+
+  .internship-section .timeline .timeline-text h2 {
+      font-size: 10px; /* Adjusted font size */
+      font-weight: 800;
+  }
+
+  .internship-section .timeline .timeline-text h4 {
+      font-size: 14px; /* Adjusted font size */
+  }
+
+  .internship-section .timeline .timeline-text p {
+      font-size: 9px; /* Adjusted font size */
+      font-weight: 600;
+  }
+  .internship-section .timeline-text {
+    text-align: center; /* Center-align text within the timeline-text div */
+    margin-right: 45px;
+    margin-left: 0px;
+}
+.internship-section1 .education-item h2 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #173b6c;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#experience.internship-section {
+  text-align: center;
+  width: 100% !important;
+  height: 296vw !important;
+  margin-left: -10px !important;
+}
+.education-item h2 {
+font-weight: 700;
+font-size: 20px;
+color: #173b6c;
+text-align: center;
+margin-bottom: 30px;
+position: relative;
+margin-top: 0px;
+}
+
+div.container.mt-4.p-2{
+  margin-top: -35px !important;
+}
+#projects h2 {
+margin-top: 6px !important;
+}
+section {
+padding: 0px 0;
+overflow: hidden;
+}
+.about-content {
+  width: 90%;
+  font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .education .timeline .timeline-text {
+    height: 150px;
+}
+.education {
+  height: 100vw;
+}
+.education .timeline .timeline-text h2 {
+  text-align: center;
+  font-size: 19px;
+}
+.skills_main{
+  margin-right: 10px;
+}
+.responsive-img {
+  top: 0px;
+}
+.education .timeline .timeline-text h2 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: -30px;
+  margin-left: 0px;
+}
+.education .timeline .timeline-item:nth-child(2) .timeline-text h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.education .timeline .timeline-item:nth-child(2) .timeline-text p {
+  margin: -10px;
+  font-size: 10px;
+}
+
+.education .timeline .timeline-item:nth-child(2) .timeline-text .responsive-img  {
+  margin-top: 25px;
+}
+.internship-section1 {
+  height: 60vh;
+  width: 100%;
+}
+.internship-section {
+  display: center;
+  justify-content: center;
+  align-items: center;
+  height: 115vh;
+  width: 100%;
+}
+.right ul li {
+  margin: 0px 1px;
+}
+}
+
+
+@media (max-width: 1030px) {
+.about-content {
+    position: static;
+    padding: 0px;
+    margin: 0px;
+    padding: 30px;
+    text-align: center;
+}
+}
+@media (max-width: 600px) {
+.about-content {
+    border: 3px solid rgb(194, 6, 109);
+    border-radius: 0px;
+}
+}
+
+@media (max-width: 600px) {
+  #footer {
+    position: static;
+    width: auto;
+    padding-right: 20px 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  }
+  .right {
+      margin-top: 50px;
+  }
+  .navbarr{
+    margin: left 30px;;
+    margin: right 20%;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 20px 0;
+}
+
+  .nav-item {
+    margin: 10px 0;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .btn-solid-lg {
+    background-color: hsl(32, 100%, 50%);
+    color: #fff;
+    padding: 15px 10px;
+    border-radius: 5px;
+}
+.btn-outline-lg {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+  .right {
+      margin-top: 0px 0px;
+
+  }
+  .left{
+    margin-top: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .projects .projects-container {
+      display: inline !important;
+  }
+}

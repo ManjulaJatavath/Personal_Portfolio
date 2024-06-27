@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manjula Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/retrive .css">
+    <link rel="import" href="basic.html">
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/circle-progress@1.2.2/dist/circle-progress.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+      <nav id="navbarr" class="navbarr" style="display: flex; justify-content: space-between; align-items: center; height: 80px; background-color: black; text-align: center; font-size: large; overflow: hidden; margin: 0; padding: 0 18px; border: 10px solid black; width: 100%;">
+        <!-- Left-aligned item -->
+        <div class="left" style="font-size: 1.5rem; color: hsl(32deg 88.68% 54.1%);">
+            <a href="#" style="text-decoration: none; color: inherit;">Manjula's Portfolio</a>
+        </div>      
+        
+        <!-- Right-aligned items -->
+        <div class="right">
+            <ul class="nav-links" style="padding: 0; display: flex; margin: 0; list-style-type: none; align-items: center; justify-content: flex-end;margin-right: 0px;">
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#about" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">About</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#education" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Education</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#skills" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Skills</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#projects" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Projects</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#experience" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Experience</a>
+                </li> 
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="#experience1" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Achievements</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <a href="blog.html" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Blogs</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
+                    <button id="darkModeToggle" style="background-color: black; color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">
+                        <i class="fas fa-moon" id="darkModeIcon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <div>
+      </header>
+      <main>
+    <!-- Hero Section -->
+    <section  class="firstSection">
+      <div class="leftSection" id="about-content">
+        <h4 style="color: #007bff;">Hello,</h4>
+        <h1><span class="small-text">My Name is</span> <span class="color">Manjula</span></h1>
+        <p>I'm passionate    <span id="name"></span></p>
+        <a class="btn-solid-lg page-scroll" href="#about"><i class="fas fa-user"></i> Discover</a>
+        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a class="btn-solid-lg page-scroll" href="assets\resume\Manjula Resume.docx" download>
+          <i class="fas fa-file-alt"></i> Download CV
+        </a>
+        <div class="social-icons">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=manjulajatavath554@gmail.com&su=Subject&body=Body%20Text" class="btn-icon page-scroll"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/ManjulaJatavath" target="_blank" class="btn-icon page-scroll"><i class="fab fa-github"></i> </a>
+          <a href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank" class="btn-icon page-scroll"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank" class="btn-icon page-scroll"><i class="fab fa-hackerrank"></i></a>
+        </div>
+      </div>    
+    </section>
+    <!-- about Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p class="light-blue-text"></p>
+        </div>   
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img1.jpg" alt="" class="img-fluid rounded-circle">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Python Developer &amp; Backend Developer.</h3>
+            <p class="fst-italic">
+              As a fresher Python Developer, I am passionate about coding and eager to learn. I am proficient in Python programming language and have a basic understanding of backend development concepts. I am enthusiastic about contributing to meaningful projects and gaining real-world experience. Ability to translate UI designs into functional code with accuracy and efficiency.
+            </p>
+            <div class="cla">
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><strong>Birthday:January 1, 1990</strong></li>
+                  <li><strong>Phone: 6302389676</strong></li>
+                  <li><strong>City: Hyderabad</strong></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><strong>Age: 24</strong> </li>
+                  <li><strong>Degree: BSC</strong> </li>
+                  <li><strong>Email: manjulajatavath554@gmail.com</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <div class="container">
+        <div class="education-item" data-wow-delay="0.1s">
+            <h2 style="font-size: 2.5rem;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">EDUCATION</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                <div class="timeline-text">
+                    <div style="float: right; margin-right: 20px;">
+                      <img src="assets/img/clg logo.jpg" alt="College Logo" class="responsive-img">
+                    </div>
+                    <div>
+                        <div class="timeline-date">2018 - 2022</div>
+                        <div class="h2-tag">
+                            <h2>BACHELOR'S DEGREE (BSC)</h2>
+                        </div>
+                        <h4>Government Degree College for Women's.</h4>
+                        <p>
+                            Nalgonda, Telangana.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                <div class="timeline-text">
+                  <div style="float: right; margin-right: 20px;">
+                    <img src="assets/img/TSBIE_Logo.jpg" alt="College Logo" style="display: block; max-width: 110px; height: auto; top: -30px; position: relative;" class="responsive-img">
+                </div>
+                    <div class="timeline-date">2016 - 2018</div>
+                    <div class="h2-tag">
+                      <h2>Board Of Intermediate</h2>
+                    </div>
+                    <h4>Government Junior Girls College.</h4>
+                    <p>
+                        Devarakonda, Nalgonda, Telangana.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                <div class="timeline-text">
+                  <div style="float: right; margin-right: 20px;">
+                    <img src="assets/img/ts logo.jpg"  alt="College Logo" class="responsive-img">
+                </div>
+                    <div class="timeline-date">2015 - 2016</div>
+                    <div class="h2-tag">
+                      <h2>Board Of Secondary School.</h2>
+                    </div>
+                    <h4>Z.P. Girls High School</h4>
+                    <p>
+                      Devarakonda, Nalgonda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- Education End -->
+
+<!-- skills Section -->
+<section id="skills">
+  <div class="skills_section">
+    <div class="skills_head">
+        <h2 style="color: #173b6c;;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">SKILLS</span></h2>
+        <p>Here is My skills to Represent My Expertise</p>
+    </div>
+  
+    <div class="skills_main">
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-python icon"></i> PYTHON PROGRAMMING</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="python"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fa-brands fa-html5"></i> HTML</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="html"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-cogs icon"></i> DJANGO FRAMEWORK</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="django"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-css3 icon"></i> CSS</span>
+                <P>80%</P>
+            </div>
+            <div class="bar">
+                <span class="css"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fa fa-cog"></i>  DJANGO REST API</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="rest"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-js icon"></i> JAVASCRIPT</span>
+                <P>70%</P>
+            </div>
+            <div class="bar">
+                <span class="js"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="bi bi-server"></i> MySQL</span>
+                <P>85%</P>
+            </div>
+            <div class="bar">
+                <span class="mysql"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;"><i class="fas fa-cogs icon"></i> Communication</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="com"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fas fa-file-alt icon"></i> MS-OFFICE</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="ms-office"></span>
+            </div>
+        </div>
+        <div class="skill_bar">
+            <div class="info">
+              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;"><i class="fas fa-cogs icon"></i> Problem Solving</span>
+                <P>90%</P>
+            </div>
+            <div class="bar">
+                <span class="problem"></span>
+            </div>
+        </div>
+    </div>
+  </div>
+  </section>
+
+
+
+<!-- Projects Section  -->
+<section class="projects" id="projects">
+  <h2 class="project-title"   style="font-size: 2.5rem;font-weight: 700;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">PROJECTS</span></h2>
+  <div class="projects-container">
+    <div class="project-container project-card">
+      <h3 class="project-title">SKIN-SAVIOUR</h3>
+      <img
+        src="assets\img\Skin-Saviour.png"
+        alt="expense-tracker"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        It's a website which offers an innovative platform where users embark on a discovery of their skin's unique needs through an engaging quiz experience.
+      </p>
+      <a href="https://skin-saviour.netlify.app" target="_blank" class="project-link">Check it Out</a>
+    </div>
+    <div class="project-container project-card">
+      <h3 class="project-title"> MR.RESTAURANT</h3>
+      <img
+        src="assets\img\restaurant.png"
+        alt="netflic-clone"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        Designed to showcase MR Restaurant's offerings and facilitate customer engagement through a user-friendly interface.
+      </p>
+      <a href="https://restaurant-website-psi-ten.vercel.app/" target="_blank" class="project-link">Check it Out</a>
+    </div>
+    <div class="project-container project-card">
+      <h3 class="project-title">EMP MANAGEMENT</h3>
+      <img
+        src="assets\img\emp-management.png"
+        alt="greeny-earth"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        Engineered core functionalities for managing employee records, enabling CRUD operations with pre-authentication employee filtering.
+      </p>
+      <a href="https://office-employee-management-system-8kq1.onrender.com/" target="_blank" class="project-link">Check it Out</a>
+    </div>
+
+    <div class="project-container project-card">
+      <h3 class="project-title">VENDOR-MANAGEMENT</h3>
+      <img
+        src="assets\img\Vendor_managment.png"
+        alt="greeny-earth"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        The Vendor Management System streamlines managing and coordinating with vendors, tracking, and performance evaluation functionalities..
+      </p>
+      <a href="https://github.com/ManjulaJatavath/Vendor-Management-system" target="_blank" class="project-link">Check it Out</a>
+    </div>
+    <div class="project-container project-card">
+      <h3 class="project-title">STUDENT MANAGEMENT</h3>
+      <img
+        src="assets\img\student.png"
+        alt="greeny-earth"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        Implemented Django-based CRUD operations with Django, Python, HTML and CSS for data manipulation.
+      </p>
+      <a href="https://github.com/ManjulaJatavath/Django-Student-management-project" target="_blank" class="project-link">Check it Out</a>
+    </div>
+    <div class="project-container project-card">
+      <h3 class="project-title">TO-DO APP</h3>
+      <img
+        src="assets\img\to-do app.png"
+        alt="greeny-earth"
+        loading="lazy"
+        class="project-pic"
+      />
+      <p class="project-details">
+        The Manju Study Planner is a web application designed to help users create and manage their study schedules. 
+      </p>
+      <a href="https://manjulajatavath.github.io/TO-DO-App/" target="_blank" class="project-link">Check it Out</a>
+    </div>
+  </div>
+</section>
+
+<!-- Internship Experience Section -->
+<section id="experience" class="internship-section" style="text-align: center; width:100%">
+  <div class="container">
+    <div class="education-item" data-wow-delay="0.1s">
+      <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent;">
+        INTERNSHIP EXPERIENCE
+      </h2>
+    </div>
+    <div class="timeline" style="display: flex; justify-content: space-around; flex-wrap: wrap; align-items:center">
+      <!-- First Internship -->
+      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.1s" style="flex: 1; min-width: 300px; margin: 10px;">
+        <div class="timeline-text">
+          <div class="timeline-date" style="text-align: center;">Dec-2023 - March-2024</div>
+          <h2 style="color: hsl(245, 100%, 50%);">Backend (Python) Intern</h2>
+          <h4 style="color: hsl(322, 86%, 50%);">BAOIAM INNOVATION PVT LTD</h4>
+          <img src="assets/img/baoiam.jpg" alt="BAOIAM Logo" style="width: 100px; height: auto; margin: 10px 0;">
+          <p>1. Work on live projects under the guidance of experienced mentors to gain practical Knowledge and skills required to excel in a professional environment.</p>
+          <p>2. Analyzed project requirements and contributed to the design and development of scalable and efficient backend systems using Python, Django, and relevant technologies.</p><br>
+          <p>3. Participated in code reviews and debugging sessions, identifying and resolving technical issues to ensure the reliability and robustness of backend applications.</p>
+        </div>
+      </div>
+
+      <!-- Models -->
+       <!-- Modals (Optional) -->
+<div id="offerLetterModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe src="assets/docs/offer_letter.pdf" style="width: 100%; height: 600px;"></iframe>
+    </div>
+</div>
+
+<div id="certificateModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe src="assets/docs/internship_certificate.pdf" style="width: 100%; height: 600px;">Boaim internship-section</iframe>
+    </div>
+</div>
+      <!-- Second Internship -->
+      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.3s" style="flex: 1; min-width: 300px; margin: 10px;">
+        <div class="timeline-text">
+          <div class="timeline-date" style="text-align: center;">March-2024 - Present</div>
+          <h2 style="color: hsl(245, 100%, 50%);">Django Junior Developer (intern)</h2>
+          <h4 style="color: hsl(322, 86%, 50%);">WORKBEES TECHNOLOGIES</h4>
+            <img src="assets/img/workbees.jpg" alt="Workbees Logo" style="width: 130px; height: 157px; margin: -1px 0;">
+          <p>1. Developed and maintained user-friendly web applications using Django Rest Framework, ensuring high performance and responsiveness.</p>
+          <p>2. Collaborated with UI/UX designers and React Developers to implement interactive and visually appealing front-end interfaces.</p>
+          <p>3. Conducted thorough testing and debugging of code to ensure optimal functionality across different browsers and devices.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <!-- Acheviements Section -->
+  <section id="experience1" class="internship-section1" style="text-align: center;">
+    <div class="container1">
+      <div class="education-item" data-wow-delay="0.1s">
+        <h2 style="font-size: 2.3rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent;">
+          ACHIEVEMENTS
+        </h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item center wow slideInCenter" data-wow-delay="0.1s">
+          <div class="timeline-text">
+              <div class="timeline-date" style="text-align: center;">
+                <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank">
+                <img src="assets\img\hackerrank.jpg" alt="HackerRank Logo" style="width: 100px; height: auto; margin: 12px 0;">
+              </a>
+              </div>
+            <h2 style="color: hsl(154, 100%, 40%);">HackerRank</h2>
+            <h4 style="color: hsl(700, 100%, 30%);">4th Star in Problem Solving</h4> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- contact Section -->
+  <section id="contact">
+    <div class="container mt-4 p-2">
+      <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">
+        CONTACT FORM
+      </h2>
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              <h3 class="text-white bg-dark text-center p-3">Contact Me</h3>
+              <div class="card p-2">
+                  <form action="" method=" ">
+                      <input type="hidden" name="csrfmiddlewaretoken" value="dummy_csrf_token_for_demo" />
+  
+                      <div class="form-group">
+                          <h5><span><i class="bx bx-user"></i> Your Name</span></h5>
+                          <input type="text" class="form-control mb-3" name="name" required />
+                      </div>
+  
+                      <div class="form-group">
+                          <h5><span><i class="bx bx-envelope"></i> Email</span></h5>
+                          <input type="email" class="form-control mb-3" name="email" required />
+                      </div>
+  
+                      <div class="form-group">
+                          <h5><span><i class="fa fa-phone"></i> Phone Number</span></h5>
+                          <input type="tel" class="form-control mb-3" name="num" required />
+                      </div>
+  
+                      <div class="form-group">
+                          <h5><span><i class="bx bx-message"></i> Message</span></h5>
+                          <textarea class="form-control mb-3" name="message" rows="5" required></textarea>
+                      </div>
+  
+                      <div class="d-grid gap-2">
+                          <button type="submit" class="btn btn-dark">Send Message</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="col-md-4"></div>
+      </div>
+  </div>
+  </section>
+
+</main>
+
+<!-- JavaScript for Dark Mode -->
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        } else {
+            darkModeIcon.classList.remove('fa-sun');
+            darkModeIcon.classList.add('fa-moon');
+        }
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script>
+  let output = document.getElementById("name");
+  console.log(output);
+  const phrases = ["Python Developer","Frontend Developer", "Full Stack Developer", "Django Developer"];
+  let count = 0;
+  let value = 0;
+  const p = 150;
+  const q = 75;
+  function print(phrase) {
+    if (count == phrase.length) {
+        clear();
+    }
+    else if (count < (phrase.length)) {
+        output.textContent += phrase.charAt(count);
+        count += 1;
+        setTimeout(function () {
+            print(phrase)
+        }, p);
+    }
+}
+function clear() {
+    
+    if (count == -1) {
+        value =(value+1)%phrases.length;
+        count = 0;
+        print(phrases[value]);
+    }
+    else if (count > -1) {
+        let duplicate = "";
+        for (let index = 0; index < count; index++) {
+            duplicate += phrases[value].charAt(index);
+        }
+        output.textContent = duplicate;
+        count=count-1;
+        setTimeout(clear, q);
+    }
+}
+
+print(phrases[value]);
+</script>
+</body>
+
+</html>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+          <div class="copyright">
+              &copy; <strong><span>Manjula Portfolio</span></strong>
+          </div>
+          <div class="credits">
+              Designed by <span style="color: red; font-size: 20px;">&hearts;</span><a href="index.html">Manjula Jatavath</a><span style="color: red; font-size: 20px;">&hearts;</span>
+          </div>
+      </div>
+    </footer>

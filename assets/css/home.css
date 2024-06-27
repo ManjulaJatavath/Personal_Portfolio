@@ -1,0 +1,1174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rancho&family=Water+Brush&display=swap');
+
+.left{
+  margin-right: 10px;
+  margin-left: 40px;
+}
+
+
+.firstSection {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  background-color: white; 
+  color: #040404;
+  margin: -10 0;
+  margin-bottom: auto;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+.leftSection{
+  font-size: 2.5rem;
+  margin: 45px 0; 
+  margin: 45px 0;
+  padding: 30px;
+  background: hwb(134 6% 9%);
+  position: relative;
+  border-right: 5px solid #dddddd;
+  box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
+  border-radius: 30px;
+} 
+.rightSection{
+    display: flex;
+    margin-top: -30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    width: 80%;
+    top: -20px;
+    height: 500px;
+    padding: 13rem 8rem;
+    background-color: rgb(54, 49, 49);
+    border-top: 12px solid var(--border-color);
+    border-bottom: 12px solid var(--border-color);
+    border-top-left-radius: 50% 90%;
+    border-bottom-right-radius: 40% 70%;
+    color: white;
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.2s;
+}
+.rightSection img {
+background-color: hsl(32, 100%, 50%);
+width: 100%;
+height: 400px;
+
+} /* height lenth */
+      
+.btn-outline-lg {
+
+background-color: #007bff;
+color: #fff;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+font-size: 14px;
+}
+.btn-solid-lg {
+background-color: hsl(32, 100%, 50%);
+color: #fff;
+padding: 10px 20px;
+border-radius: 5px;
+text-decoration: none;
+font-size: 14px;
+}
+.leftSection h1 p {
+white-space: nowrap; 
+}
+.leftSection h1 h5 p{
+font-family: "Poppins", sans-serif;
+}
+.color{
+color: hsl(310, 92%, 34%);
+}
+.typed {
+color: hsl(32, 100%, 50%);
+font-size: 22px;
+}
+p{
+font-size: 25px;
+}
+.small-text {
+font-size: 20px;
+}
+.first{
+max-width: 80vw;
+margin: auto;
+}
+.second{
+max-width: 80vw; 
+margin: auto;
+
+}
+section {
+  padding: 90px 0;
+  overflow: hidden;
+}
+#about-content{
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    /* box-shadow: 1px 1px 6px 2px black; */
+    padding: 7rem 13rem;
+    margin-left: -0%;
+    background-color: #181816;
+    border-top: 12px solid var(--border-color);
+    border-bottom: 12px solid var(--border-color);
+    border-top-left-radius: 65% 30%;
+    border-bottom-right-radius: 50% 40%;
+    color: white;
+}
+/*-------------------------------------
+    1.  Education
+--------------------------------------*/
+.education {
+  position: relative;
+  padding: 40px 0 15px 0;
+  height: 55vw !important;
+}
+.education .container{
+  margin-top: -48px;
+}
+.education-item h2{
+font-weight: 700;
+font-size: 2.5rem;
+color: #173b6c;
+text-align: center;
+margin-bottom: 30px;
+position: relative;
+margin-top: 56px;
+font-weight: 700;
+margin-right: 10px;
+}
+
+.container, .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 60px;
+}
+.h2-tag{
+color: #007bff;
+}
+.education-item h2::after {
+content: '';
+bottom: -2px;
+left: 50%;
+transform: translateX(-50%);
+width: 100px; 
+height: 2px;
+background-color: #1594c7; 
+}
+.education .timeline {
+position: relative;
+width: 100%;
+}
+
+.education .timeline::after {
+content: '';
+position: absolute;
+width: 2px;
+background: hsl(32, 100%, 50%);
+top: 0;
+bottom: 0;
+left: 50%;
+margin-left: 15px;
+}
+
+.education .timeline .timeline-item {
+position: relative;
+background: inherit;
+width: 50%;
+margin-bottom: 30px;
+}
+
+.education .timeline .timeline-item.left {
+left: -10px;
+padding-right: 30px;
+}
+
+.education .timeline .timeline-item.right {
+left: 50%;
+padding-left: 30px;
+}
+
+.education .timeline .timeline-item::after {
+content: '';
+position: absolute;
+width: 16px;
+height: 16px;
+top: 48px;
+right: -8px;
+background: #ffffff;
+border: 2px solid hsl(32, 100%, 50%);
+border-radius: 16px;
+z-index: 1;
+}
+
+.education .timeline .timeline-item.right::after {
+left: -8px;
+}
+
+.education .timeline .timeline-item::before {
+content: '';
+position: absolute;
+width: 0;
+height: 0;
+top: 46px;
+right: 10px;
+z-index: 1;
+border: 10px solid;
+border-color: transparent transparent transparent #dddddd;
+}
+
+.education .timeline .timeline-item.right::before {
+left: 10px;
+border-color: transparent #dddddd transparent transparent;
+}
+
+.education .timeline .timeline-date {
+position: absolute;
+width: 100%;
+top: 44px;
+font-size: 16px;
+font-weight: 600;
+color: hsl(29, 86%, 54%);
+text-transform: uppercase;
+letter-spacing: 1px;
+z-index: 1;
+}
+
+.education .timeline .timeline-item.left .timeline-date {
+text-align: left;
+left: calc(100% + 55px);
+}
+
+.education .timeline .timeline-item.right .timeline-date {
+text-align: right;
+right: calc(100% + 55px);
+}
+
+.education .timeline .timeline-text {
+  flex: 1 1 30rem;
+  background: var(--bg-color);
+  padding: 3rem 2rem 4rem;
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  box-shadow: 0 .1rem .5rem var(--shadow-color);
+  text-align: center;
+  border-top: .6rem solid var(--about-border-color);
+  border-bottom: .6rem solid var(--about-border-color);
+  border-left: 1px dotted var(--border-color);
+  border-right: 1px dotted var(--border-color);
+  transition: .5s ease;
+  height: 160px;
+}
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --main-color: linear-gradient(to bottom, rgb(194, 6, 109) 40%, rgb(223, 19, 203) 60%, rgb(211, 13, 165));
+  --main-color1: linear-gradient(to bottom, rgb(235, 55, 154) 40%, rgb(169, 36, 156) );
+  --white-color: #fdfdfd;
+  --shadow-color: rgba(0, 0, 0, .2);
+  --border-color: #c20696;
+  --about-border-color:rgb(194, 5, 106);
+  --skills-shadowcolor: rgb(227, 28, 64);
+  --skills-bordercolor: white;
+  --internship-shadowcolor: rgb(194, 6, 125);
+  --firstsection-shadowcolor:#f60aa3;
+
+}
+.education .timeline .timeline-item.right .timeline-text {
+border-right: none;
+border-left: 5px solid #dddddd;
+}
+
+.education .timeline .timeline-text h2 {
+margin: 0 0 5px 0;
+font-size: 22px;
+font-weight: 600;
+margin-top: -30px;
+margin-left: -100px;
+}
+
+.education .timeline .timeline-text h4 {
+margin: 0 0 10px 0;
+font-size: 16px;
+font-style: italic;
+font-weight: 400;
+}
+
+.education .timeline .timeline-text p {
+margin: 0;
+font-size: 16px;
+}
+.responsive-img {
+  display: block;
+  max-width: 110px;
+  height: auto;
+  top: -30px;
+  position: relative;
+}
+.education .timeline .timeline-item:nth-child(3) .timeline-text h2 {
+  font-size: 22px;
+}
+/*-------------------------------------
+    2.  Skills
+--------------------------------------*/
+
+.skills_section{
+    width: 100%;
+    height: 100vh;
+    padding: 0px 13%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -70px;
+}
+.progressText{
+  font-size: 20px;
+}
+.skills_head{
+    width: 100%;
+    margin-bottom: 10px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+.skills_head h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+.skills_head h2 span{
+    color: #e74d06;
+}
+.skills_main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 100px;
+    margin-right: 120px;
+}
+.skills_main .skill_bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:  0 10px;
+}
+.skill_bar .info p:nth-child(2){
+    font-weight: 500;
+}
+.skill_bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 25px;
+    margin-top: 5px;
+    position: relative;
+}
+.skill_bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: hsl(232, 71%, 47%);
+    border-radius: 25px;
+}
+.skill_bar .bar .python{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes python {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .django{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes django {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .ms-office{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes ms-office {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .mysql{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes mysql {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .rest{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes rest {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .html{
+    width: 90%;
+    animation: html 2s;
+}
+@keyframes html {
+    0%{
+        width: 0%;
+    }100%{
+        width: 90%;
+    }
+}
+.skill_bar .bar .css{
+    width: 95%;
+    animation: css 2s;
+}
+@keyframes css {
+    0%{
+        width: 0%;
+    }100%{
+        width: 85%;
+    }
+}
+
+.skill_bar .bar .js{
+    width: 80%;
+    animation: css 2s;
+}
+@keyframes js {
+    0%{
+        width: 0%;
+    }100%{
+        width: 80%;
+    }
+}
+.skill_bar .bar .problem{
+    width: 80%;
+    animation: css 2s;
+}
+@keyframes problem {
+    0%{
+        width: 0%;
+    }100%{
+        width: 80%;
+    }
+}
+
+.skill_bar .bar .com{
+  width: 80%;
+  animation: css 2s;
+}
+@keyframes com {
+  0%{
+      width: 0%;
+  }100%{
+      width: 80%;
+  }
+}
+
+/*-------------------------------------
+    3.  Internship Experience
+--------------------------------------*/
+#experience {
+  padding: 10px 0;
+  margin:0 0 10px;
+  
+  }
+  div.cla{
+    margin-left: 27px;
+  }
+
+  #experience.internship-section{
+    text-align: center;
+    width: 100%;
+    height: 50vw !important;
+  }
+  .internship-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vw;
+  
+  }
+  .internship-section {
+  display: center;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  width:100%
+  }
+  .internship-section .education-item h2 {
+  /* Apply styles for the section title */
+  font-weight: 700;
+  font-size: 26px;
+  color: #173b6c;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  }
+  
+  .internship-section .timeline {
+  position: relative;
+  width: 100%;
+  }
+  
+  .internship-section .timeline .timeline-item {
+  position: relative;
+  background: inherit;
+  width: 50%;
+  margin-bottom: 30px;
+  }
+  .internship-section .timeline .timeline-text {
+    padding: 11px;
+    background: #ffffff;
+    position: relative;
+    border-right: 50px solid #dddddd;
+    box-shadow: 0 0 60px hwb(203 49% 24% / 0.875)
+  }
+  .internship-section .timeline .timeline-item.center {
+  left: -2%;
+  padding-right: 0px;
+  }
+  
+  .internship-section .timeline .timeline-item.right {
+  left: 50px;
+  }
+  
+  .internship-section .timeline .timeline-text {
+  box-shadow: 2px 2px 6px 1px var(--skills-shadowcolor);
+  padding: 30px;
+  background: #ffffff;
+  position: relative;
+  border-right: 5px solid #dddddd;
+  box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
+  border-radius: 30px;
+  }
+  
+  
+  
+  .internship-section .timeline .timeline-text h2 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: hsl(0, 0%, 0%);
+  }
+  
+  .internship-section .timeline .timeline-text h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  }
+  
+  .internship-section .timeline .timeline-text p {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  
+  }
+
+/*-------------------------------------
+    4.  Projects
+--------------------------------------*/
+#projects {
+padding: 10px 0;
+margin:0 0 5px;
+margin-top: -170px;
+}
+
+#projects .sub-title {
+text-align: center;
+}
+
+.project-list {
+display: flex;
+justify-content: space-between;
+margin: 5px 15px 5px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.col1 {
+flex-basis: 55%;
+}
+
+.col1 .title h4 {
+text-align: center;
+padding: 10px;
+margin-bottom: 20px;
+font-size: 25px;
+}
+
+.title {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30px;
+font-weight: 700;
+
+}
+
+.title a {
+color: #7f00ff;
+background: white;
+font-size: 20px;
+border-radius: 50%;
+padding: 10px;
+margin-bottom: 20px;
+}
+
+.col1 p {
+text-align: center;
+font-size: 20px;
+}
+
+.col2 {
+flex-basis: 40%;
+position: relative;
+overflow: hidden;
+transform: height 0.5s;
+margin: 10px 20px 0;
+padding-bottom: 5px;
+margin-bottom: 0px;
+}
+.col1{
+margin-bottom: 0;
+}
+.col2 .image1 {
+width: 100%;
+height: 100%;
+border-radius: 20px;
+}
+
+.layer {
+width: 100%;
+height: 0%;
+background: linear-gradient(rgba(0,0,0,0.6), #b4854d);
+border-radius: 20px;
+position: absolute;
+left: 0;
+bottom: 0;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 0 40px;
+text-align: center;
+transition: height 0.5s;
+}
+
+.layer a {
+color: #b4854d;
+background: white;
+font-size: 15px;
+border-radius: 50%;
+padding: 10px;
+margin-top: 10px;
+}
+
+.col2:hover .layer {
+height: 100%;
+}
+#projects h2{
+font-weight: 700;
+font-size: 26px;
+color: #173b6c;
+text-align: center;
+position: relative;
+margin-top: 96px;
+}
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+/*-------------------------------------
+    5.  Acheivements
+--------------------------------------*/
+.internship-section .timeline .timeline-item.center {
+  left: 0%;
+  padding-right: 0px;
+}
+#experience1 {
+  padding: 10px 0;
+  margin:0 0 20px;
+  
+  }
+  div.container1{
+    margin-top: 110px;
+  }
+  .internship-container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0vw;
+  
+  }
+  .internship-section1 {
+  display: center;
+  justify-content: center; 
+  align-items: center;
+  margin: 20px;
+  height: 70vh; 
+  width:100%
+  
+  }
+  .internship-section1 .education-item h2 {
+  /* Apply styles for the section title */
+  font-weight: 700;
+  font-size: 26px;
+  color: #173b6c;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  /* margin-top: 120px; */
+  margin-bottom: 40px;
+  }
+
+  .internship-section1 .timeline {
+  position: relative;
+  width: 100%;
+  }
+  
+  .internship-section1 .timeline .timeline-item {
+  position: relative;
+  background: inherit;
+  width: 50%;
+  margin-bottom: 30px;
+  }
+  .internship-section1 .timeline .timeline-item.center {
+  left: 25%;
+  padding-right: 0px;
+  }
+  
+  .internship-section1 .timeline .timeline-item.right {
+  left: 50px;
+  }
+  
+  .internship-section1 .timeline .timeline-text {
+  padding: 30px;
+  background: #ffffff;
+  position: relative;
+  border-right: 5px solid #dddddd;
+  box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
+  border-radius: 30px;
+  text-align: center;
+  }
+  
+  .internship-section .timeline .timeline-text {
+
+    padding: 40px;
+    background: #ffffff;
+    position: relative;
+    border-right: 5px solid #dddddd;
+    box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
+    border-radius: 30px;
+}
+  
+  .internship-section1 .timeline .timeline-text h2 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: hsl(0, 0%, 0%);
+  }
+  
+  .internship-section .timeline .timeline-text h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  }
+  
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  padding: 15px;
+  color: #f4f6fd;
+  font-size: 14px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #040b14;
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  color: #eaebf0;
+}
+
+
+.firstSection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.leftSection h4 {
+  color: #007bff;
+}
+
+.leftSection h1 .color {
+  color: #d80dc4;
+}
+
+.leftSection p {
+  color: white;
+}
+
+.leftSection .typed {
+  color: inherit;
+}
+
+/* Dark mode styles */
+body.dark-mode .firstSection {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode .skills_section p {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode .skills_section  {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .leftSection h4 {
+  color: #007bff;
+}
+
+body.dark-mode .leftSection h1 .color {
+  color: #007bff;
+}
+
+body.dark-mode .leftSection p {
+  color: #ffffff;
+}
+
+body.dark-mode .leftSection .typed {
+  color: inherit;
+}
+
+body.dark-mode .btn-solid-lg,
+body.dark-mode .btn-outline-lg {
+  color: #ffffff;
+}
+
+
+body.dark-mode .rightSection img {
+  filter: brightness(0.9);
+}
+
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .navbarr {
+    background-color: black;
+  }
+
+  .nav-item a {
+    color: white;
+  }
+
+  .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .dark-mode a {
+    color: #ffffff;
+  }
+
+  .dark-mode .navbarr {
+    background-color: #333333;
+  }
+
+  .dark-mode .nav-item a:hover {
+    background-color: #0056b3;
+  }
+
+  /* Ensure p tags are styled correctly */
+  .dark-mode p {
+    color: black;
+  }
+  .dark-mode h4 {
+    color: black;
+  }
+  .dark-mode #projects {
+    color: black;
+  }
+ 
+
+
+  .projects {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .project-title span {
+    background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%));
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .projects {
+    background-color: #121212;
+    color: #ffffff;
+  }
+ 
+
+  body.dark-mode .projects .project-container {
+    border-color: #333333;
+  }
+  
+  body.dark-mode .projects{
+    color: #007bff;
+  }
+  
+  body.dark-mode .projects .project-link:hover {
+    color: #0056b3;
+  }
+  
+  body.dark-mode .projects .project-pic {
+    filter: brightness(0.9);
+  }
+
+
+    #navbarr.navbarr {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background-color: black;
+      text-align: center;
+      font-size: large;
+      overflow: hidden;
+      margin: 2px 0px;
+      padding: 30px 60px;
+      position: fixed;
+      z-index: 1000;
+      top: 0px;
+    }
+  .projects {
+    background-color:var(--bg-color);
+    padding: 32px 0;
+    margin-top: 2rem;
+  }
+  
+  .project-pic {
+    width: 100%;
+    height: 150px;
+  }
+  
+  .projects-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .project-container p {
+    padding: 0.4rem;
+    font-size: smaller;
+  }
+  
+  .project-title {
+    margin-bottom: var(--bottom-margin);
+  }
+  
+  .project-details {
+    margin-bottom: var(--bottom-margin);
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+    padding: 20px;
+    margin: 10px;
+  }
+  .projects-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .project-container {
+    text-align: center;
+    width: 21.rem;
+    padding: 1rem;
+  }
+  .project-container p {
+    padding: 0.4rem;
+  }
+  
+  .project-title {
+    margin-bottom: var(--bottom-margin);
+    color: #b30773;
+  }
+  a.project-link{
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #6b90e6;
+  }
+  .typed-cursor {
+    opacity: 1;
+}
+.typed-cursor.typed-cursor--blink {
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+}
+
+@keyframes typedjsBlink {
+  50% {
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes typedjsBlink {
+  50% {
+      opacity: 0;
+  }
+}
+.project-details {
+    margin-bottom: var(--bottom-margin);
+  }
+  :root {
+    --font-family: "Roboto", sans-serf;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-color: #fcfcfc;
+    --primary-color: #4756df;
+    --secondary-color: #ff7235;
+    --primary-shadow: #8b8eaf;
+    --secondary-shadow: #a17a69;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+  }
+  #projects h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #173b6c;
+    text-align: center;
+    position: relative;
+    margin-top: 96px;
+}
+  .projects .projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+img.img-fluid .rounded-circle{
+  height: fit-content !important;
+  margin-top: -100px !important;
+}
+.about{
+margin-top: -10px;
+background-color: hwb(211 73% 5%);
+}
+.section-title h2 {
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+
+  .col-md-4 {
+      flex: 0 0 auto;
+      width: 45.33333333% !important;
+      margin-left: -80px !important;
+      margin-right: -60px !important;
+  }
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  background-color: #00ff9d;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+.btn-icon  {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: .2rem solid var(--border-color);
+  border-radius: 50%;
+  box-shadow: 0 .2rem .5rem var(--shadow-color);
+  font-size: 2rem;
+  background: var(--main-color);
+  background-clip: text;
+  color: transparent;
+  margin: 2.5rem 1.5rem 3rem 0;
+  transition: .5s ease;
+}
+
+.btn-icon:hover {
+  background-color: hsl(102, 100%, 35%);
+}
+
+.btn-icon i {
+  font-size: 15px;
+}
