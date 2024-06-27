@@ -828,7 +828,14 @@ margin-top: 96px;
   z-index: 9999;
   background: #040b14;
 }
-
+.img-fluid {
+  max-width: 100%;
+  /* height: auto; */
+  height: 430px !important;
+  margin-top: -70px;
+  margin-right: 10px;
+  background-color: #c91688;
+}
 #footer .copyright {
   text-align: center;
 }
