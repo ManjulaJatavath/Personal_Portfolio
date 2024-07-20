@@ -510,7 +510,7 @@ font-size: 16px;
   #experience.internship-section{
     text-align: center;
     width: 100%;
-    height: 50vw !important;
+    height: 28vw !important;
   }
   .internship-container{
   display: flex;
@@ -608,7 +608,12 @@ padding: 10px 0;
 margin:0 0 5px;
 margin-top: -170px;
 }
-
+.project-container{
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+.project-container:hover {
+  background-color: #f6baed
+}
 #projects .sub-title {
 text-align: center;
 }
@@ -616,11 +621,28 @@ text-align: center;
 .project-list {
 display: flex;
 justify-content: space-between;
-margin: 5px 15px 5px;
+margin: 0px 5px 5px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-
+.internship-section .timeline .timeline-text{
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+.internship-section .timeline .timeline-text:hover{
+  background-color: #f58ed3
+}
+.internship-section1 .timeline .timeline-text{
+  transition: width 2s, height 2s, background-color 2s, transform 1s;
+}
+.internship-section1 .timeline .timeline-text:hover{
+  background-color: hwb(36 7% 5%)
+}
+.education .timeline .timeline-text {
+  transition: width 2s, height 2s, background-color 2s, transform 1s;
+}
+.education .timeline .timeline-text:hover {
+  background-color: hsl(157, 68%, 70%);
+}
 .col1 {
 flex-basis: 55%;
 }

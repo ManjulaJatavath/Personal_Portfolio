@@ -124,14 +124,14 @@
                 <ul class="about-details">
                   <li><strong>Birthday:</strong> August 17, 2001</li>
                   <li><strong>City:</strong> Hyderabad</li>
-                  <li><strong>LinkedIn:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank">Manjula Jatavath</a></li>
+                  <li><strong>LinkedIn:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank">Manjula Kethavath</a></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul class="about-details">
                   <li><strong>Degree:</strong> BSC</li>
                   <li><strong>Email:</strong> manjulajatavath554@gmail.com</li>
-                  <li><strong>GitHub:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://github.com/ManjulaJatavath" target="_blank">Manjula Jatavath</a></li>
+                  <li><strong>GitHub:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://github.com/ManjulaJatavath" target="_blank">Manjula Kethavath</a></li>
                 </ul>
               </div>
             </div>
@@ -406,15 +406,13 @@
           <h2 style="color: hsl(245, 100%, 50%);">Backend (Python) Intern</h2>
           <h4 style="color: hsl(322, 86%, 50%);">BAOIAM INNOVATION PVT LTD</h4>
           <img src="assets/img/baoiam.jpg" alt="BAOIAM Logo" style="width: 100px; height: auto; margin: 10px 0;">
-          <p>1. Work on live projects under the guidance of experienced mentors to gain practical Knowledge and skills required to excel in a professional environment.</p>
+          <!-- <p>1. Work on live projects under the guidance of experienced mentors to gain practical Knowledge and skills required to excel in a professional environment.</p>
           <p>2. Analyzed project requirements and contributed to the design and development of scalable and efficient backend systems using Python, Django, and relevant technologies.</p><br>
-          <p>3. Participated in code reviews and debugging sessions, identifying and resolving technical issues to ensure the reliability and robustness of backend applications.</p>
+          <p>3. Participated in code reviews and debugging sessions, identifying and resolving technical issues to ensure the reliability and robustness of backend applications.</p> -->
         </div>
       </div>
-
-      <!-- Models -->
        <!-- Modals (Optional) -->
-<div id="offerLetterModal" class="modal">
+<!-- <div id="offerLetterModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <iframe src="assets/docs/offer_letter.pdf" style="width: 100%; height: 600px;"></iframe>
@@ -426,17 +424,29 @@
         <span class="close">&times;</span>
         <iframe src="assets/docs/internship_certificate.pdf" style="width: 100%; height: 600px;">Boaim internship-section</iframe>
     </div>
-</div>
+</div> -->
       <!-- Second Internship -->
       <div class="timeline-item center wow slideInCenter" data-wow-delay="3.3s" style="flex: 1; min-width: 300px; margin: 10px;">
         <div class="timeline-text">
-          <div class="timeline-date" style="text-align: center;">March-2024 - Present</div>
-          <h2 style="color: hsl(245, 100%, 50%);">Django Junior Developer (intern)</h2>
+          <div class="timeline-date" style="text-align: center;">February-2024 - Jun-2024</div>
+          <h2 style="color: hsl(245, 100%, 50%);">Python Junior intern</h2>
           <h4 style="color: hsl(322, 86%, 50%);">WORKBEES TECHNOLOGIES</h4>
-            <img src="assets/img/workbees.jpg" alt="Workbees Logo" style="width: 130px; height: 157px; margin: -1px 0;">
-          <p>1. Developed and maintained user-friendly web applications using Django Rest Framework, ensuring high performance and responsiveness.</p>
+            <img style="height: 70px; width: 40%" src="assets/img/workbees.jpg" alt="Workbees Logo" style="width: 130px; height: 157px; margin: -1px 0;">
+          <!-- <p>1. Developed and maintained user-friendly web applications using Django Rest Framework, ensuring high performance and responsiveness.</p>
           <p>2. Collaborated with UI/UX designers and React Developers to implement interactive and visually appealing front-end interfaces.</p>
-          <p>3. Conducted thorough testing and debugging of code to ensure optimal functionality across different browsers and devices.</p>
+          <p>3. Conducted thorough testing and debugging of code to ensure optimal functionality across different browsers and devices.</p> -->
+        </div>
+      </div>
+
+      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.1s" style="flex: 1; min-width: 300px; margin: 10px;">
+        <div class="timeline-text">
+          <div class="timeline-date" style="text-align: center;">July-2024 - Present</div>
+          <h2 style="color: hsl(245, 100%, 50%);">Backend Developer Intern</h2>
+          <h4 style="color: hsl(322, 86%, 50%);">SAT N PAPER</h4>
+          <img style="height:65px; width:100px" src="assets/img/sat n paper.jpeg" alt="BAOIAM Logo" style="width: 100px; height: auto; margin: 10px 0;">
+          <!-- <p>1. Work on live projects under the guidance of experienced mentors to gain practical Knowledge and skills required to excel in a professional environment.</p>
+          <p>2. Analyzed project requirements and contributed to the design and development of scalable and efficient backend systems using Python, Django, and relevant technologies.</p><br>
+          <p>3. Participated in code reviews and debugging sessions, identifying and resolving technical issues to ensure the reliability and robustness of backend applications.</p> -->
         </div>
       </div>
     </div>
@@ -482,7 +492,7 @@
           <div class="col-md-4">
               <h3 class="text-white bg-dark text-center p-3">Contact Me</h3>
               <div class="card p-2">
-                  <form action="" method=" ">
+                  <form id="contactForm">
                       <input type="hidden" name="csrfmiddlewaretoken" value="dummy_csrf_token_for_demo" />
   
                       <div class="form-group">
@@ -515,7 +525,35 @@
       </div>
   </div>
   </section>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            email: formData.get('num'),
+            message: formData.get('message')
+        };
 
+        fetch('send_email.py', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert('Email sent successfully');
+        })
+        .catch(error => {
+            alert('There was an error sending the email');
+            console.error('Error:', error);
+        });
+    });
+</script>
 </main>
 
 <!-- JavaScript for Dark Mode -->
@@ -584,7 +622,7 @@ print(phrases[value]);
               &copy; <strong><span>Manjula Portfolio</span></strong>
           </div>
           <div class="credits">
-              Designed by <span style="color: red; font-size: 20px;">&hearts;</span><a href="index.html">Manjula Jatavath</a><span style="color: red; font-size: 20px;">&hearts;</span>
+              Designed by <span style="color: red; font-size: 20px;">&hearts;</span><a href="index.html">Manjula Kethavath</a><span style="color: red; font-size: 20px;">&hearts;</span>
           </div>
       </div>
     </footer>
