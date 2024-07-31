@@ -1225,14 +1225,14 @@ height: 47vw;
 
 /* Category styling */
 .category {
-  position: relative; /* Enable positioning with left */
-  padding-left: 20px; /* Space inside the container */
+  position: relative; 
+  padding-left: 20px; 
   margin-bottom: 40px;
-  left: 50px; /* Offset from the left edge */
-  background-color: #fff; /* Optional: Add background color for better visibility */
-  border-radius: 8px; /* Optional: Add border radius for aesthetics */
-  border: 1px solid #ddd; /* Optional: Add border for visual separation */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual */
+  left: 50px; 
+  background-color: #fff; 
+  border-radius: 8px;
+  border: 1px solid #ddd; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   padding: 20px; 
   text-align: center; 
 }
@@ -1252,7 +1252,7 @@ height: 47vw;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center; 
-  flex-direction: row; /* Default direction, change to column for vertical */
+  flex-direction: row; 
 }
 
 /* Document card styling */
@@ -1287,7 +1287,7 @@ height: 47vw;
   padding: 10px 20px;
   font-size: 1em;
   color: #fff;
-  background-color: rgb(211, 7, 163); /* Green background */
+  background-color: rgb(211, 7, 163); 
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -1301,19 +1301,14 @@ height: 47vw;
   transform: scale(1.05);
 }
 .document-card a:focus {
-  outline: 2px solid hsl(0, 91%, 43%); /* Darker outline for focus */
+  outline: 2px solid hsl(0, 91%, 43%); /* outline for focus */
   outline-offset: 4px;
 }
-
-/* .category {
-  padding-left: 20px; 
-  left: 300px;
-} */
 
 /* Document preview image styling */
 .doc-preview{
   width: 100%;
-  height: 190px; /* Fixed height for images */
+  height: 190px; 
   object-fit: cover;
   border-radius: 8px;
 }
