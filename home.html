@@ -453,9 +453,6 @@
   </div>
 </section>
 
-
-
-
       <!-- Acheviements Section -->
   <section id="experience1" class="internship-section1" style="text-align: center;">
     <div class="container1">
@@ -482,78 +479,113 @@
 
 
     <!-- contact Section -->
-  <section id="contact">
-    <div class="container mt-4 p-2">
-      <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">
-        CONTACT FORM
-      </h2>
-      <div class="row">
+    <section id="contact">
+      <div class="container mt-4 p-2">
+        <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">
+          CONTACT FORM
+        </h2>
+        <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
-              <h3 class="text-white bg-dark text-center p-3">Contact Me</h3>
-              <div class="card p-2">
-                  <form id="contactForm">
-                      <input type="hidden" name="csrfmiddlewaretoken" value="dummy_csrf_token_for_demo" />
-  
-                      <div class="form-group">
-                          <h5><span><i class="bx bx-user"></i> Your Name</span></h5>
-                          <input type="text" class="form-control mb-3" name="name" required />
-                      </div>
-  
-                      <div class="form-group">
-                          <h5><span><i class="bx bx-envelope"></i> Email</span></h5>
-                          <input type="email" class="form-control mb-3" name="email" required />
-                      </div>
-  
-                      <div class="form-group">
-                          <h5><span><i class="fa fa-phone"></i> Phone Number</span></h5>
-                          <input type="tel" class="form-control mb-3" name="num" required />
-                      </div>
-  
-                      <div class="form-group">
-                          <h5><span><i class="bx bx-message"></i> Message</span></h5>
-                          <textarea class="form-control mb-3" name="message" rows="5" required></textarea>
-                      </div>
-  
-                      <div class="d-grid gap-2">
-                          <button type="submit" class="btn btn-dark">Send Message</button>
-                      </div>
-                  </form>
-              </div>
+            <h3 class="text-white bg-dark text-center p-3">Contact Me</h3>
+            <div class="card p-2">
+              <form id="contactForm" method="post" name="google-sheet">
+                <div class="form-group">
+                  <h5><span><i class="fas fa-user"></i> Your Name</span></h5>
+                  <input type="text" class="form-control mb-3" name="name" required />
+                </div>
+    
+                <div class="form-group">
+                  <h5><span><i class="fas fa-envelope"></i> Email</span></h5>
+                  <input type="email" class="form-control mb-3" name="email" required />
+                </div>
+    
+                <div class="form-group">
+                  <h5><span><i class="fa fa-phone"></i> Phone Number</span></h5>
+                  <input type="tel" class="form-control mb-3" name="num" required />
+                </div>
+    
+                <div class="form-group">
+                  <h5><span><i class="fas fa-envelope"></i> Message</span></h5>
+                  <textarea class="form-control mb-3" name="message" rows="5" required></textarea>
+                </div>
+    
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-dark">Send Message</button>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="col-md-4"></div>
+        </div>
       </div>
-  </div>
-  </section>
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const formData = new FormData(event.target);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            email: formData.get('num'),
-            message: formData.get('message')
-        };
+    </section>
+<!-- <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWi7hIlpcUvugCYVv6zrh5n5EQGvkbK7K85LUDOeCE1d8N5HTJ9j318YBwnbzCyhJa/exec';
+  const form = document.forms['google-sheet'];
+  const submitButton = form.querySelector('button[type="submit"]');
 
-        fetch('send_email.py', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.text())
-        .then(data => {
-            alert('Email sent successfully');
-        })
-        .catch(error => {
-            alert('There was an error sending the email');
-            console.error('Error:', error);
-        });
-    });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    submitButton.disabled = true;
+    submitButton.innerText = 'Sending...';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        alert("Thanks for contacting me! Your Details Saved Successfully.");
+        
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.innerText = 'Send Message';
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('There was an error sending your message. Please try again.');
+
+        // Re-enable the button in case of an error
+        submitButton.disabled = false;
+        submitButton.innerText = 'Send Message';
+      });
+  });
+</script> -->
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWi7hIlpcUvugCYVv6zrh5n5EQGvkbK7K85LUDOeCE1d8N5HTJ9j318YBwnbzCyhJa/exec';
+  const form = document.forms['google-sheet'];
+  const submitButton = form.querySelector('button[type="submit"]');
+  const messageContainer = document.createElement('div');
+  form.appendChild(messageContainer);
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    submitButton.disabled = true;
+    submitButton.innerText = 'Sending...';
+    
+    // Show a loading message
+    messageContainer.innerHTML = '<p style="font-size: 1rem;color:green">Submitting your data...</p>';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        if (response.ok) {
+          messageContainer.innerHTML = '<p style="font-size: 1rem;color:blue">Thanks for contacting me! Your details have been saved successfully.</p>';
+          form.reset();
+        } else {
+          messageContainer.innerHTML = '<p style="font-size: 1rem;">There was a problem with your submission. Please try again later.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        messageContainer.innerHTML = '<p>There was an error sending your message. Please try again later.</p>';
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.innerText = 'Send Message';
+      });
+  });
 </script>
+
+
 </main>
 
 <!-- JavaScript for Dark Mode -->
