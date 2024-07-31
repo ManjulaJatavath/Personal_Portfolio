@@ -703,3 +703,51 @@ overflow: hidden;
       display: inline !important;
   }
 }
+
+/* Styles for mobile devices with a maximum width of 600px */
+@media only screen and (max-width: 600px) {
+  /* Main section styling */
+  .certificates {
+      padding: 10px;
+      margin: 0;
+  }
+
+  /* Category styling */
+  .category {
+      margin-bottom: 30px;
+  }
+
+  /* Category heading */
+  .category h2 {
+      font-size: 1.2em; /* Slightly smaller font size for mobile */
+      text-align: center; /* Center align the heading */
+  }
+
+  /* Document container styling */
+  .document-container {
+      display: block; /* Stack items vertically */
+      padding: 0;
+  }
+
+  /* Document card styling */
+  .document-card {
+      width: 100%; /* Full width for smaller screens */
+      margin: 10px 0; /* Margin between cards */
+      padding: 10px;
+  }
+
+  /* Document card preview styling */
+  /* .doc-preview img, 
+  .pdf-preview {
+      width: 100%; /* Full width for images and PDFs */
+      /* height: auto; /* Adjust height to maintain aspect ratio */
+  /* } */ */ */
+
+  /* Document card button styling */
+
+
+  /* Button hover effect */
+  .document-card a:hover {
+      background-color: hsl(210, 11%, 7%); /* Darker blue on hover */
+  }
+}

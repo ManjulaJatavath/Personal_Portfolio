@@ -70,6 +70,16 @@ border-radius: 5px;
 text-decoration: none;
 font-size: 14px;
 }
+.btn-outline-lg:hover {
+color: rgb(29, 13, 13);
+}
+.btn-solid-lg:hover{
+  color: rgb(29, 13, 13);
+}
+a.project-link:hover{
+  background-color: rgb(30, 29, 26);
+  color: #f1e5ef;
+}
 .btn-solid-lg {
 background-color: hsl(32, 100%, 50%);
 color: #fff;
@@ -1200,4 +1210,120 @@ height: 47vw;
 
 .btn-icon i {
   font-size: 15px;
+}
+
+/* My Documents */
+
+/* Main section styling */
+.certificates {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* Category styling */
+.category {
+  position: relative; /* Enable positioning with left */
+  padding-left: 20px; /* Space inside the container */
+  margin-bottom: 40px;
+  left: 50px; /* Offset from the left edge */
+  background-color: #fff; /* Optional: Add background color for better visibility */
+  border-radius: 8px; /* Optional: Add border radius for aesthetics */
+  border: 1px solid #ddd; /* Optional: Add border for visual separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual */
+  padding: 20px; 
+  text-align: center; 
+}
+
+/* Category heading */
+.category h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: rgb(9, 99, 195);
+  font-weight: 540;
+  text-align: center;
+}
+
+/* Document container styling */
+.document-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; 
+  flex-direction: row; /* Default direction, change to column for vertical */
+}
+
+/* Document card styling */
+.document-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Document card hover effect */
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Document card title styling */
+.document-card h3 {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+/* Document card link styling */
+.document-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: rgb(211, 7, 163); /* Green background */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Document card link hover effect */
+.document-card a:hover {
+  color: #292c29;
+  transform: scale(1.05);
+}
+.document-card a:focus {
+  outline: 2px solid hsl(0, 91%, 43%); /* Darker outline for focus */
+  outline-offset: 4px;
+}
+
+/* .category {
+  padding-left: 20px; 
+  left: 300px;
+} */
+
+/* Document preview image styling */
+.doc-preview{
+  width: 100%;
+  height: 190px; /* Fixed height for images */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* PDF preview styling */
+.pdf-preview {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  overflow: hidden;
 }

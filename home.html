@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manjula Portfolio</title>
+    <link rel="icon" type="image/jpg" href="assets/img/profile-img2.jpg"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/home.css">
@@ -69,6 +70,11 @@
                        onmouseout="this.style.backgroundColor=''">Achievements</a>
                 </li>
                 <li class="nav-item" style="margin: 15px;">
+                    <a href="#certificates" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
+                       onmouseover="this.style.backgroundColor='#007bff'"
+                       onmouseout="this.style.backgroundColor=''">Certificates</a>
+                </li>
+                <li class="nav-item" style="margin: 15px;">
                     <a href="blog.html" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
                        onmouseover="this.style.backgroundColor='#007bff'"
                        onmouseout="this.style.backgroundColor=''">Blogs</a>
@@ -88,7 +94,7 @@
     <section  class="firstSection">
       <div class="leftSection" id="about-content">
         <h4 style="color: #007bff;">Hello,</h4>
-        <h1><span class="small-text">My Name is</span> <span class="color">Manjula</span></h1>
+        <h1><span class="small-text">My Name is</span> <span class="color">Manjula.</span></h1>
         <p>I'm passionate    <span id="name"></span></p>
         <a class="btn-solid-lg page-scroll" href="#about"><i class="fas fa-user"></i> Discover</a>
         <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
@@ -643,6 +649,78 @@ function clear() {
 }
 
 print(phrases[value]);
+</script>
+<section class="certificates" id="certificates">
+  <h1 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">My Certificates and Documents</h1>
+  <div class="category" id="course-certificates">
+    <h2>Course Certificates</h2>
+    <div class="document-container" id="course-certificate-container"></div>
+  </div>
+  <div class="category" id="offer-letters">
+    <h2>Offer Letters</h2>
+    <div class="document-container" id="offer-letter-container"></div>
+  </div>
+  <div class="category" id="internship-certificates">
+    <h2>Internship Certificates</h2>
+    <div class="document-container" id="internship-certificate-container"></div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Example document data categorized
+    const documents = {
+        'offer_letters': [
+            { title: 'Offer Letter from SAT nPaper', url: 'assets/Doc/Offer_Letters/Offer For Internship - Kethavath Manjula from SAT-N-PAPAER.pdf',type: 'pdf' },
+            { title: 'Offer Letter from Baoiam', url: 'assets/Doc/Offer_Letters/OL Manjula from Baioam.pdf', type: 'pdf' }
+        ],
+        'internship_certificates': [
+            { title: 'Internship Certificate from Boaim Innovation PVT LTD', url: 'assets/Doc/Internship Certificates/Manjula Jatavath  Baoiam Certificate.pdf',type: 'pdf' },
+            { title: 'Internship Certificate from Workbees OPC PVT LTD', url: 'assets/Doc/Internship Certificates/Manjula Kethavath Workbees Certficate.pdf' , type: 'pdf'}
+        ],
+        'course_certificates': [
+            { title: 'Python from Udemy', url: 'assets/Doc/Course_certificates/UC-cerificate.pdf',type: 'pdf' },
+            { title: 'Django from Simplelearn', url: 'assets/Doc/Course_certificates/thumb_5066474_1713777282 (1).png',type: 'image' },
+            { title: 'MySQL from Great Learning', url: 'assets/Doc/Course_certificates/Manjula_Jatavath20230901-72-umci6p.jpg',type: 'image' },
+            { title: 'HTML from Scaler', url: 'assets/Doc/Course_certificates/HTML.png',type: 'image' },
+            { title: 'Python from HackerRank', url: 'assets/Doc/Course_certificates/HackerRank.png',type: 'image' },
+            { title: 'Python from SoloLearn Platform', url: 'assets/Doc/Course_certificates/Certificate.jpg',type: 'image' },
+        ]
+    };
+
+    const categories = {
+        'offer_letters': 'offer-letter-container',
+        'internship_certificates': 'internship-certificate-container',
+        'course_certificates': 'course-certificate-container'
+    };
+
+    function loadDocuments(category, containerId) {
+        const container = document.getElementById(containerId);
+        documents[category].forEach(doc => {
+            const docCard = document.createElement('div');
+            docCard.className = 'document-card';
+            // Document preview and title
+            let preview = '';
+            if (doc.type === 'image') {
+                preview = `<img src="${doc.url}" alt="${doc.title}" class="doc-preview">`;
+            } else if (doc.type === 'pdf') {
+                preview = `<iframe src="${doc.url}" class="pdf-preview" frameborder="0"></iframe>`;
+            }
+
+            docCard.innerHTML = `
+                <div class="doc-preview-container">
+                    ${preview}
+                </div>
+                <h3>${doc.title}</h3>
+                <a href="${doc.url}" download>Preview</a>
+            `;
+            container.appendChild(docCard);
+        });
+    }
+
+    for (const [category, containerId] of Object.entries(categories)) {
+        loadDocuments(category, containerId);
+    }
+});
 </script>
 </body>
 
