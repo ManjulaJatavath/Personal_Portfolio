@@ -124,8 +124,8 @@
       font-size: 15px;
     }
     .education {
-      width: 100%; /* Ensure it doesn't collapse due to width issues */
-      overflow: visible; /* Avoid overflow hidden if it clips content */
+      width: 100%;
+      overflow: visible; 
   }
     }
 
@@ -715,6 +715,7 @@ overflow: hidden;
   /* Category styling */
   .category {
       margin-bottom: 30px;
+      margin-right: 70px;
   }
 
   /* Category heading */
@@ -750,4 +751,5 @@ overflow: hidden;
   .document-card a:hover {
       background-color: hsl(210, 11%, 7%); /* Darker blue on hover */
   }
+
 }

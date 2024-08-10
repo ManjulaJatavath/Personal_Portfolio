@@ -641,11 +641,12 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 .internship-section .timeline .timeline-text:hover{
   background-color: #f58ed3
 }
-.internship-section1 .timeline .timeline-text{
-  transition: width 2s, height 2s, background-color 2s, transform 1s;
-}
+
 .internship-section1 .timeline .timeline-text:hover{
-  background-color: hwb(36 7% 5%)
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid hwb(0 6% 94%);
+  background-color: hsl(309, 36%, 44%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .education .timeline .timeline-text {
   transition: width 2s, height 2s, background-color 2s, transform 1s;
@@ -829,6 +830,12 @@ margin-top: 96px;
     border-right: 5px solid #dddddd;
     box-shadow: 2px 2px 6px 1px var(--internship-shadowcolor);
     border-radius: 30px;
+}
+  .internship-section .timeline .timeline-text:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 3px solid hwb(0 6% 94%);
+    /* background-color: hsl(309, 36%, 44%); */
 }
   
   .internship-section1 .timeline .timeline-text h2 {

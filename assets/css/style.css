@@ -873,6 +873,11 @@ body.dark-mode .rightSection img {
     width: 21.rem;
     padding: 1rem;
   }
+  .project-container:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 3px solid hwb(0 6% 94%);
+  }
   .project-container p {
     padding: 0.4rem;
   }
