@@ -1,735 +1,1611 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manjula Portfolio</title>
-    <link rel="icon" type="image/jpg" href="assets/img/profile-img2.jpg"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/retrive .css">
-    <link rel="import" href="basic.html">
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manjula Kethavath — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="assets/js/main.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            ink: '#0a0a0f',
+            surface: '#111118',
+            card: '#16161e',
+            border: '#ffffff0f',
+            accent: '#e040c8',
+            gold: '#f5a623',
+            cyan: '#00e5ff',
+            muted: '#6b7280',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+            'slide-in-left': 'slideInLeft 0.7s ease forwards',
+            'slide-in-right': 'slideInRight 0.7s ease forwards',
+            'type': 'typing 3s steps(30) infinite',
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            glowPulse: { '0%,100%': { boxShadow: '0 0 20px #e040c840' }, '50%': { boxShadow: '0 0 40px #e040c880' } },
+            slideInLeft: { '0%': { opacity: 0, transform: 'translateX(-40px)' }, '100%': { opacity: 1, transform: 'translateX(0)' } },
+            slideInRight: { '0%': { opacity: 0, transform: 'translateX(40px)' }, '100%': { opacity: 1, transform: 'translateX(0)' } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0a0a0f;
+      color: #e8e8f0;
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    #mobile-menu.mob-open {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #e040c860 transparent;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    body.light {
+      background: #f5f5fa;
+      color: #111118;
+    }
+
+    /* Fix about section info values (Birthday, City etc) */
+    body.light [style*="font-size:14px; font-weight:500"] {
+      color: #111118 !important;
+    }
+
+    /* Fix about role badge */
+    body.light [style*="background:rgba(22,22,30,0.95)"] {
+      background: rgba(255, 255, 255, 0.98) !important;
+      border-color: rgba(224, 64, 200, 0.3) !important;
+    }
+
+    body.light [style*="color:#e8e8f0; font-weight:600"] {
+      color: #111118 !important;
+    }
+
+    /* Fix doc preview background */
+    body.light .doc-preview-wrap {
+      background: #f0f0f8 !important;
+    }
+
+    /* Fix project card titles and text */
+    body.light .proj-card h3 {
+      color: #111118 !important;
+    }
+
+    body.light .proj-card p {
+      color: #555570 !important;
+    }
+
+    /* Fix certificate section heading text */
+    body.light [style*="color:#e8e8f0"] {
+      color: #111118 !important;
+    }
+
+    /* Fix inline colored spans like "2+ Years", "6+" in float card */
+    body.light [style*="color:#e8e8f0"] span {
+      color: #111118 !important;
+    }
+
+    /* Fix hero description text */
+    body.light [style*="color:#6b7280"] {
+      color: #444460 !important;
+    }
+
+    body.light [style*="color:#9999b0"] {
+      color: #333350 !important;
+    }
+
+    /* Fix section divider lines in certificates */
+    body.light [style*="background:rgba(255,255,255,0.06)"] {
+      background: rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Fix exp card internship date text */
+    body.light .exp-card h3 {
+      color: #111118 !important;
+    }
+
+    body.light .exp-card p {
+      color: #555570 !important;
+    }
+
+    /* Fix achieve card text */
+    body.light .achieve-card p {
+      color: #444460 !important;
+    }
+
+    /* Fix cert card preview text */
+    body.light .cert-card p {
+      color: #444460 !important;
+    }
+
+    /* Fix footer in light mode */
+    body.light footer [style*="color:#6b7280"] {
+      color: #555570 !important;
+    }
+
+    body.light footer [style*="color:#555570"] {
+      color: #666680 !important;
+    }
+
+    /* Fix timeline card text */
+    body.light .glass-card p {
+      color: #444460 !important;
+    }
+
+    body.light .glass-card h3 {
+      color: #111118 !important;
+    }
+
+    /* Fix mobile nav background */
+    body.light #mobile-menu {
+      background: rgba(245, 245, 250, 0.98);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.light nav {
+      background: rgba(245, 245, 250, 0.95);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.light .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 0, 0, 0.08);
+      color: #111118;
+    }
+
+    body.light .proj-card {
+      background: #ffffff;
+      color: #111118;
+    }
+
+    body.light .exp-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #111118;
+    }
+
+    body.light .cert-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #111118;
+    }
+
+    body.light .achieve-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: #111118;
+    }
+
+    body.light .form-input {
+      background: rgba(0, 0, 0, 0.04);
+      color: #111118;
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+
+    body.light .form-input::placeholder {
+      color: #888899;
+    }
+
+    body.light .nav-link {
+      color: #333350;
+    }
+
+    body.light .nav-link:hover {
+      background: rgba(0, 0, 0, 0.06);
+      color: #111118;
+    }
+
+    body.light .skill-track {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    body.light h1,
+    body.light h2,
+    body.light h3,
+    body.light h4 {
+      color: #111118;
+    }
+
+    body.light p {
+      color: #444460;
+    }
+
+    body.light .timeline-dot {
+      border-color: #f5f5fa;
+    }
+
+    body.light footer {
+      background: #e8e8f2;
+    }
+
+    body.light footer p {
+      color: #555570;
+    }
+
+    body.light .social-btn {
+      background: rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 0, 0, 0.1);
+      color: #444460;
+    }
+
+    body.light .btn-secondary {
+      background: rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #111118;
+    }
+
+    body.light #hero-float-card .glass-card {
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    body.light label {
+      color: #444460 !important;
+    }
+
+    /* Gradient mesh */
+    .mesh-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .mesh-bg::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #e040c815 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+    }
+
+    .mesh-bg::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00e5ff10 0%, transparent 70%);
+      bottom: 20%;
+      left: -150px;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      background: rgba(10, 10, 15, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Gradient text */
+    .grad-text {
+      background: linear-gradient(135deg, #e040c8, #f5a623);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .grad-text-2 {
+      background: linear-gradient(135deg, #00e5ff, #e040c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .grad-text-3 {
+      background: linear-gradient(90deg, #e040c8 0%, #f5a623 50%, #00e5ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Section title accent */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e040c8;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: #e040c8;
+    }
+
+    /* Cards */
+    .glass-card {
+      background: rgba(22, 22, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(224, 64, 200, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(224, 64, 200, 0.1);
+    }
+
+    /* Skill bars */
+    .skill-track {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      height: 6px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #e040c8, #f5a623);
+      transition: width 1.5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* Timeline */
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, #e040c860, #e040c8, #e040c860, transparent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #e040c8;
+      box-shadow: 0 0 12px #e040c880;
+      border: 2px solid #0a0a0f;
+    }
+
+    /* Project card */
+    .proj-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #16161e;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.4s ease;
+    }
+
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #e040c808, #f5a62308);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .proj-card:hover::before {
+      opacity: 1;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(224, 64, 200, 0.2);
+    }
+
+    .proj-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .proj-card:hover .proj-img {
+      transform: scale(1.04);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0f;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #e040c860;
+      border-radius: 4px;
+    }
+
+    /* Nav link */
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: #9999b0;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Hero typewriter */
+    #typed-role {
+      border-right: 2px solid #e040c8;
+      padding-right: 4px;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        border-color: #e040c8;
+      }
+
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Contact input */
+    .form-input {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #e8e8f0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: #e040c8;
+      box-shadow: 0 0 0 3px rgba(224, 64, 200, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: #555570;
+    }
+
+    /* Cert card */
+    .cert-card {
+      background: rgba(22, 22, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .cert-card:hover {
+      border-color: rgba(245, 166, 35, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(245, 166, 35, 0.08);
+    }
+
+    /* Responsive nav */
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 80vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #mobile-menu.open {
+      display: flex;
+    }
+
+    @media (max-width: 900px) {
+      #desktop-nav {
+        display: none;
+      }
+
+      #mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (min-width: 901px) {
+      #mobile-menu-btn {
+        display: none;
+      }
+    }
+
+    /* Animate on scroll */
+    .anim-hidden {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .anim-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(224, 64, 200, 0.1);
+      border: 1px solid rgba(224, 64, 200, 0.2);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: #e040c8;
+      font-weight: 500;
+    }
+
+    /* Social icon */
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #9999b0;
+      font-size: 18px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      background: rgba(224, 64, 200, 0.15);
+      border-color: rgba(224, 64, 200, 0.4);
+      color: #e040c8;
+      transform: translateY(-2px);
+    }
+
+    /* Achievement card */
+    .achieve-card {
+      background: linear-gradient(135deg, rgba(22, 22, 30, 0.9), rgba(16, 16, 24, 0.9));
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+
+    .achieve-card:hover {
+      border-color: rgba(245, 166, 35, 0.5);
+      box-shadow: 0 20px 60px rgba(245, 166, 35, 0.1);
+      transform: translateY(-6px);
+    }
+
+    /* PDF/img preview */
+    .doc-preview-wrap {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #0d0d14;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 12px;
+    }
+
+    .doc-preview-wrap iframe,
+    .doc-preview-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Btn primary */
+    .btn-primary-glow {
+      background: linear-gradient(135deg, #e040c8, #b020a0);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-primary-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(224, 64, 200, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e8e8f0;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Exp card */
+    .exp-card {
+      background: rgba(22, 22, 30, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s;
+    }
+
+    .exp-card:hover {
+      border-color: rgba(0, 229, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 229, 255, 0.08);
+    }
+
+    /* ── MOBILE & TABLET RESPONSIVE ── */
+    @media (max-width: 768px) {
+
+      /* About section - stack vertically */
+      #about .anim-hidden,
+      #about .anim-visible {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      #about [style*="width:340px"] {
+        width: 260px !important;
+        height: 260px !important;
+      }
+
+      #about [style*="position:relative; display:inline-block"] {
+        display: block !important;
+        text-align: center;
+      }
+
+      #about [style*="bottom:10px; right:-10px"] {
+        position: static !important;
+        margin-top: 16px;
+        display: inline-block;
+      }
+
+      /* Education timeline - single column */
+      [style*="grid-template-columns:1fr 60px 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      .timeline-line {
+        display: none;
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+
+      [style*="margin-right:20px"] {
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+
+      [style*="margin-left:20px"] {
+        margin-left: 0 !important;
+      }
+
+      /* Skills grid */
+      #skills-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Projects grid */
+      #projects-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Experience grid */
+      [style*="grid-template-columns:repeat(auto-fit, minmax(280px"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Certificates grid */
+      #course-certs-grid,
+      #offer-letters-grid,
+      #internship-certs-grid {
+        grid-template-columns: 1fr 1fr !important;
+      }
+
+      /* Hero section */
+      #hero-float-card {
+        display: none !important;
+      }
+
+      [style*="padding:80px 24px"] {
+        padding: 40px 20px !important;
+      }
+
+      [style*="font-size:clamp(3rem,7vw,5.5rem)"] {
+        font-size: 2.5rem !important;
+      }
+
+      /* Section padding */
+      section {
+        padding: 60px 0 !important;
+      }
+
+      /* Nav */
+      [style*="padding:0 24px; height:68px"] {
+        padding: 0 16px !important;
+      }
+
+      /* Contact form */
+      [style*="padding:40px"] {
+        padding: 24px !important;
+      }
+
+      /* Certificates section headings */
+      [style*="display:flex; align-items:center; gap:12px; margin-bottom:28px"] {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      #course-certs-grid,
+      #offer-letters-grid,
+      #internship-certs-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      [style*="font-size:clamp(2rem,4vw,3rem)"] {
+        font-size: 1.8rem !important;
+      }
+
+      .btn-primary-glow,
+      .btn-secondary {
+        padding: 10px 18px !important;
+        font-size: 13px !important;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+      /* Tablet */
+      #about .anim-hidden,
+      #about .anim-visible {
+        gap: 40px !important;
+      }
+
+      #about [style*="width:340px"] {
+        width: 260px !important;
+        height: 260px !important;
+      }
+
+      #skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      #projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      #hero-float-card {
+        display: none !important;
+      }
+
+      [style*="padding:80px 24px"] {
+        padding: 60px 24px !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/circle-progress@1.2.2/dist/circle-progress.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://unpkg.com/scrollreveal"></script>
 
-      <nav id="navbarr" class="navbarr" style="display: flex; justify-content: space-between; align-items: center; height: 80px; background-color: black; text-align: center; font-size: large; overflow: hidden; margin: 0; padding: 0 18px; border: 10px solid black; width: 100%;">
-        <!-- Left-aligned item -->
-        <div class="left" style="font-size: 1.5rem; color: hsl(32deg 88.68% 54.1%);">
-          <div class="name">
-            <a href="#" style="text-decoration: none; color: inherit;">Manjula's Portfolio</a>
+  <div class="mesh-bg"></div>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav>
+    <div
+      style="max-width:1280px; margin:0 auto; padding:0 24px; height:68px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="#" style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; text-decoration:none;"
+        class="grad-text">Manjula's Portfolio</a>
+
+      <div id="desktop-nav" style="display:flex; align-items:center; gap:4px;">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="darkToggleBtn" onclick="toggleDark()"
+          style="margin-left:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#9999b0; width:38px; height:38px; border-radius:10px; cursor:pointer; font-size:16px; transition:all 0.3s;"
+          title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+      <button id="mobile-menu-btn" onclick="toggleMobile()"
+        style="background:none; border:none; color:#e8e8f0; font-size:22px; cursor:pointer; padding:8px;">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" style="border-top:1px solid rgba(255,255,255,0.06); padding:8px 16px;">
+      <a href="#about" class="nav-link" onclick="toggleMobile()">About</a>
+      <a href="#education" class="nav-link" onclick="toggleMobile()">Education</a>
+      <a href="#skills" class="nav-link" onclick="toggleMobile()">Skills</a>
+      <a href="#projects" class="nav-link" onclick="toggleMobile()">Projects</a>
+      <a href="#experience" class="nav-link" onclick="toggleMobile()">Experience</a>
+      <a href="#achievements" class="nav-link" onclick="toggleMobile()">Achievements</a>
+      <a href="#certificates" class="nav-link" onclick="toggleMobile()">Certificates</a>
+      <a href="#contact" class="nav-link" onclick="toggleMobile()">Contact</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section
+    style="min-height:100vh; display:flex; align-items:center; padding-top:68px; position:relative; z-index:1; overflow:hidden;">
+    <!-- Large background text -->
+    <div
+      style="position:absolute; right:-40px; top:50%; transform:translateY(-50%); font-family:'Syne',sans-serif; font-size:clamp(80px,18vw,200px); font-weight:900; color:rgba(224,64,200,0.04); line-height:1; user-select:none; pointer-events:none;">
+      MANJULA</div>
+
+    <div style="max-width:1280px; margin:0 auto; padding:80px 24px; width:100%;">
+      <div style="max-width:760px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+          <div style="width:40px; height:1px; background:#e040c8;"></div>
+          <span
+            style="font-size:13px; letter-spacing:3px; text-transform:uppercase; color:#e040c8; font-weight:600;">Hello,
+            World</span>
+        </div>
+
+        <h1
+          style="font-family:'Syne',sans-serif; font-size:clamp(3rem,7vw,5.5rem); font-weight:800; line-height:1.05; margin-bottom:20px;">
+          My Name is<br />
+          <span class="grad-text">Manjula.</span>
+        </h1>
+
+        <p style="font-size:1.2rem; color:#9999b0; margin-bottom:16px;">I'm passionate — <span id="typed-role"
+            class="grad-text-2" style="font-weight:600;"></span></p>
+
+        <p style="font-size:0.95rem; color:#6b7280; max-width:560px; line-height:1.8; margin-bottom:40px;">
+          Python & Django developer with hands-on experience in full-stack development. Currently working remotely as a
+          Full Stack Developer at SAT N PAPER (Noida), building scalable applications using React.js & Next.js on the
+          frontend and Django on the backend.
+        </p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:48px;">
+          <a href="#about" class="btn-primary-glow"><i class="fas fa-user"></i> Discover Me</a>
+          <a href="#contact" class="btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="assets/resume/Manjula Resume.docx" download class="btn-secondary"><i class="fas fa-file-alt"></i>
+            Download CV</a>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=manjulajatavath554@gmail.com" target="_blank"
+            class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/ManjulaJatavath" target="_blank" class="social-btn" title="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank" class="social-btn" title="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank" class="social-btn"
+            title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative floating card -->
+    <div style="position:absolute; right:5%; top:50%; transform:translateY(-50%); display:none;" id="hero-float-card">
+      <div class="glass-card" style="padding:28px; min-width:220px;">
+        <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#e040c8; margin-bottom:16px;">
+          Quick Stats</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px; color:#9999b0;">Experience</span>
+            <span style="font-size:13px; font-weight:600; color:#e8e8f0;">2+ Years</span>
           </div>
-        </div>      
-        
-        <!-- Right-aligned items -->
-        <div class="right">
-            <ul class="nav-links" style="padding: 0; display: flex; margin: 0; list-style-type: none; align-items: center; justify-content: flex-end;margin-right: 0px;">
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#about" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">About</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#education" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Education</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#skills" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Skills</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#projects" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Projects</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#experience" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Experience</a>
-                </li> 
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#experience1" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Achievements</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="#certificates" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Certificates</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <a href="blog.html" style="color: white; text-decoration: none; transition: background-color 0.3s ease; border-radius: 10px; padding: 10px;"
-                       onmouseover="this.style.backgroundColor='#007bff'"
-                       onmouseout="this.style.backgroundColor=''">Blogs</a>
-                </li>
-                <li class="nav-item" style="margin: 15px;">
-                    <button id="darkModeToggle" style="background-color: black; color: white; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">
-                        <i class="fas fa-moon" id="darkModeIcon"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-      <div>
-      </header>
-      <main>
-    <!-- Hero Section -->
-    <section  class="firstSection">
-      <div class="leftSection" id="about-content">
-        <h4 style="color: #007bff;">Hello,</h4>
-        <h1><span class="small-text">My Name is</span> <span class="color">Manjula.</span></h1>
-        <p>I'm passionate    <span id="name"></span></p>
-        <a class="btn-solid-lg page-scroll" href="#about"><i class="fas fa-user"></i> Discover</a>
-        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-envelope"></i> Contact Me</a>
-        <a class="btn-solid-lg page-scroll" href="assets\resume\Manjula Resume.docx" download>
-          <i class="fas fa-file-alt"></i> Download CV
-        </a>
-        <div class="social-icons">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=manjulajatavath554@gmail.com&su=Subject&body=Body%20Text" class="btn-icon page-scroll"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/ManjulaJatavath" target="_blank" class="btn-icon page-scroll"><i class="fab fa-github"></i> </a>
-          <a href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank" class="btn-icon page-scroll"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank" class="btn-icon page-scroll"><i class="fab fa-hackerrank"></i></a>
-        </div>
-      </div>    
-    </section>
-    <!-- about Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-title">
-          <h2>About Me</h2>
-          <p class="light-blue-text"></p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img2.jpg" alt="" class="img-fluid rounded-circle">
+          <div style="height:1px; background:rgba(255,255,255,0.06);"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px; color:#9999b0;">Projects</span>
+            <span style="font-size:13px; font-weight:600; color:#e8e8f0;">6+</span>
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Python Developer &amp; Backend Developer.</h3>
-            <p class="fst-italic">
-              As a fresher Python Developer, I am passionate about coding and eager to learn. I am proficient in Python programming language and have a basic understanding of backend development concepts. I am enthusiastic about contributing to meaningful projects and gaining real-world experience. Ability to translate UI designs into functional code with accuracy and efficiency.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="about-details">
-                  <li><strong>Birthday:</strong> August 17, 2001</li>
-                  <li><strong>City:</strong> Hyderabad</li>
-                  <li><strong>LinkedIn:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank">Manjula Kethavath</a></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="about-details">
-                  <li><strong>Degree:</strong> BSC</li>
-                  <li><strong>Email:</strong> manjulajatavath554@gmail.com</li>
-                  <li><strong>GitHub:</strong> <a style="color: hsl(238, 87%, 37%);" href="https://github.com/ManjulaJatavath" target="_blank">Manjula Kethavath</a></li>
-                </ul>
-              </div>
-            </div>
+          <div style="height:1px; background:rgba(255,255,255,0.06);"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:13px; color:#9999b0;">HackerRank</span>
+            <span style="font-size:13px; font-weight:600;" class="grad-text">4★ Stars</span>
           </div>
         </div>
       </div>
-    </section>
-
-  <!-- Education Section -->
-  <section class="education" id="education">
-    <div class="container">
-        <div class="education-item" data-wow-delay="0.1s">
-            <h2 style="font-size: 2.5rem;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">EDUCATION</span></h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div style="float: right; margin-right: 20px;">
-                      <img src="assets/img/clg logo.jpg" alt="College Logo" class="responsive-img">
-                    </div>
-                    <div>
-                        <div class="timeline-date">2018 - 2022</div>
-                        <div class="h2-tag">
-                            <h2>BACHELOR'S DEGREE (BSC)</h2>
-                        </div>
-                        <h4>Government Degree College for Women's.</h4>
-                        <p>
-                            Nalgonda, Telangana.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                  <div style="float: right; margin-right: 20px;">
-                    <img src="assets/img/TSBIE_Logo.jpg" alt="College Logo" style="display: block; max-width: 110px; height: auto; top: -30px; position: relative;" class="responsive-img">
-                </div>
-                    <div class="timeline-date">2016 - 2018</div>
-                    <div class="h2-tag">
-                      <h2>Board Of Intermediate</h2>
-                    </div>
-                    <h4>Government Junior Girls College.</h4>
-                    <p>
-                        Devarakonda, Nalgonda, Telangana.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                  <div style="float: right; margin-right: 20px;">
-                    <img src="assets/img/ts logo.jpg"  alt="College Logo" class="responsive-img">
-                </div>
-                    <div class="timeline-date">2015 - 2016</div>
-                    <div class="h2-tag">
-                      <h2>Board Of Secondary School.</h2>
-                    </div>
-                    <h4>Z.P. Girls High School</h4>
-                    <p>
-                      Devarakonda, Nalgonda.
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
-  </section>
-  <!-- Education End -->
-
-<!-- skills Section -->
-<section id="skills">
-  <div class="skills_section">
-    <div class="skills_head">
-        <h2 style="color: #173b6c;;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">SKILLS</span></h2>
-        <p>Here is My skills to Represent My Expertise</p>
-    </div>
-  
-    <div class="skills_main">
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-python icon"></i> PYTHON PROGRAMMING</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="python"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fa-brands fa-html5"></i> HTML</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="html"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-cogs icon"></i> DJANGO FRAMEWORK</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="django"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-css3 icon"></i> CSS</span>
-                <P>80%</P>
-            </div>
-            <div class="bar">
-                <span class="css"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fa fa-cog"></i>  DJANGO REST API</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="rest"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fab fa-js icon"></i> JAVASCRIPT</span>
-                <P>70%</P>
-            </div>
-            <div class="bar">
-                <span class="js"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="bi bi-server"></i> MySQL</span>
-                <P>85%</P>
-            </div>
-            <div class="bar">
-                <span class="mysql"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;"><i class="fas fa-cogs icon"></i> Communication</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="com"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent"><i class="fas fa-file-alt icon"></i> MS-OFFICE</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="ms-office"></span>
-            </div>
-        </div>
-        <div class="skill_bar">
-            <div class="info">
-              <span class="progressText" style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;"><i class="fas fa-cogs icon"></i> Problem Solving</span>
-                <P>90%</P>
-            </div>
-            <div class="bar">
-                <span class="problem"></span>
-            </div>
-        </div>
-    </div>
-  </div>
   </section>
 
 
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" style="position:relative; z-index:1; padding:100px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div class="anim-hidden" style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
 
-<!-- Projects Section  -->
-<section class="projects" id="projects">
-  <h2 class="project-title"   style="font-size: 2.5rem;font-weight: 700;">MY <span style="background:linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text;color:transparent ;">PROJECTS</span></h2>
-  <div class="projects-container">
-    <div class="project-container project-card">
-      <h3 class="project-title">SKIN-SAVIOUR</h3>
-      <img
-        src="assets\img\Skin-Saviour.png"
-        alt="expense-tracker"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        It's a website which offers an innovative platform where users embark on a discovery of their skin's unique needs through an engaging quiz experience.
-      </p>
-      <a href="https://skin-saviour.netlify.app" target="_blank" class="project-link">Check it Out</a>
-    </div>
-    <div class="project-container project-card">
-      <h3 class="project-title"> MR.RESTAURANT</h3>
-      <img
-        src="assets\img\restaurant.png"
-        alt="netflic-clone"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        Designed to showcase MR Restaurant's offerings and facilitate customer engagement through a user-friendly interface.
-      </p>
-      <a href="https://restaurant-website-psi-ten.vercel.app/" target="_blank" class="project-link">Check it Out</a>
-    </div>
-    <div class="project-container project-card">
-      <h3 class="project-title">EMP MANAGEMENT</h3>
-      <img
-        src="assets\img\emp-management.png"
-        alt="greeny-earth"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        Engineered core functionalities for managing employee records, enabling CRUD operations with pre-authentication employee filtering.
-      </p>
-      <a href="https://office-employee-management-system-8kq1.onrender.com/" target="_blank" class="project-link">Check it Out</a>
-    </div>
+        <!-- Photo side -->
+        <div style="position:relative;">
+          <div style="position:relative; display:inline-block;">
+            <div
+              style="width:340px; height:340px; border-radius:32px; overflow:hidden; border:1px solid rgba(224,64,200,0.2); position:relative;">
+              <img src="assets/img/profile-img2.jpg" alt="Manjula" style="width:100%; height:100%; object-fit:cover;"
+                onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#e040c820,#f5a62320)';" />
+            </div>
+            <!-- Decorative dots -->
+            <div
+              style="position:absolute; bottom:-20px; right:-20px; width:80px; height:80px; background:radial-gradient(circle at center, #e040c830 0%, transparent 70%); border-radius:50%;">
+            </div>
+            <div
+              style="position:absolute; top:-20px; left:-20px; width:60px; height:60px; border:1px solid rgba(224,64,200,0.2); border-radius:16px; transform:rotate(12deg);">
+            </div>
+          </div>
+          <!-- Role badge -->
+          <div
+            style="position:absolute; bottom:10px; right:-10px; background:rgba(22,22,30,0.95); border:1px solid rgba(224,64,200,0.3); border-radius:16px; padding:14px 20px; backdrop-filter:blur(12px);">
+            <div style="font-size:12px; color:#9999b0; margin-bottom:2px;">Current Role</div>
+            <div style="font-weight:600; font-size:14px; color:#e8e8f0;">Full Stack Developer</div>
+            <div style="font-size:11px;" class="grad-text">@ SAT N PAPER</div>
+          </div>
+        </div>
 
-    <div class="project-container project-card">
-      <h3 class="project-title">VENDOR-MANAGEMENT</h3>
-      <img
-        src="assets\img\Vendor_managment.png"
-        alt="greeny-earth"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        The Vendor Management System streamlines managing and coordinating with vendors, tracking, and performance evaluation functionalities..
-      </p>
-      <a href="https://github.com/ManjulaJatavath/Vendor-Management-system" target="_blank" class="project-link">Check it Out</a>
-    </div>
-    <div class="project-container project-card">
-      <h3 class="project-title">STUDENT MANAGEMENT</h3>
-      <img
-        src="assets\img\student.png"
-        alt="greeny-earth"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        Implemented Django-based CRUD operations with Django, Python, HTML and CSS for data manipulation.
-      </p>
-      <a href="https://github.com/ManjulaJatavath/Django-Student-management-project" target="_blank" class="project-link">Check it Out</a>
-    </div>
-    <div class="project-container project-card">
-      <h3 class="project-title">TO-DO APP</h3>
-      <img
-        src="assets\img\to-do app.png"
-        alt="greeny-earth"
-        loading="lazy"
-        class="project-pic"
-      />
-      <p class="project-details">
-        The Manju Study Planner is a web application designed to help users create and manage their study schedules. 
-      </p>
-      <a href="https://manjulajatavath.github.io/TO-DO-App/" target="_blank" class="project-link">Check it Out</a>
-    </div>
-  </div>
-</section>
-<!-- Experience Section -->
-<section id="experience" class="internship-section" style="text-align: center; width:100%">
-  <div class="container">
-    <div class="education-item" data-wow-delay="0.1s">
-      <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent;">
-        EXPERIENCE
-      </h2>
-    </div>
-    <div class="timeline" style="display: flex; justify-content: space-around; flex-wrap: wrap; align-items:center">
-      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.1s" style="flex: 1; min-width: 300px; margin: 10px;">
-        <div class="timeline-text">
-          <div class="timeline-date" style="text-align: center;">June-2025 - Present</div>
-          <h2 style="color: hsl(245, 100%, 50%);">Full Stack Developer</h2>
-          <h4 style="color: hsl(322, 86%, 50%);">SAT N PAPER</h4>
-          <img style="height:65px; width:100px" src="assets/img/sat n paper.jpeg" alt="SatnPaper Logo" style="width: 100px; height: auto; margin: 10px 0;">
+        <!-- Content side -->
+        <div>
+          <div class="section-label">Who I Am</div>
+          <h2
+            style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; margin-bottom:16px; line-height:1.1;">
+            Full Stack Developer<br />& <span class="grad-text">React · Next.js · Django</span>
+          </h2>
+          <p style="color:#9999b0; line-height:1.8; margin-bottom:24px; font-size:0.95rem;">
+            <!-- As a fresher Python Developer, I am passionate about coding and eager to learn. I am proficient in Python
+            and have a solid understanding of backend development with Django. I'm enthusiastic about contributing to
+            meaningful projects and gaining real-world experience. -->
+            Python & Django developer with hands-on experience building full-stack applications. Currently working
+            remotely as a Full Stack Developer at SAT N PAPER (Noida), developing scalable solutions with React.js &
+            Next.js on the frontend and Python & Django REST API on the backend.
+          </p>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:32px;">
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div><span style="color:#6b7280; font-size:13px;">Birthday</span><br /><span
+                  style="font-size:14px; font-weight:500;">August 17, 2001</span></div>
+              <div><span style="color:#6b7280; font-size:13px;">City</span><br /><span
+                  style="font-size:14px; font-weight:500;">Hyderabad</span></div>
+              <div><span style="color:#6b7280; font-size:13px;">Degree</span><br /><span
+                  style="font-size:14px; font-weight:500;">BSC</span></div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div><span style="color:#6b7280; font-size:13px;">Email</span><br /><a
+                  href="mailto:manjulajatavath554@gmail.com"
+                  style="font-size:13px; color:#e040c8; word-break:break-all;">manjulajatavath554@gmail.com</a></div>
+              <div><span style="color:#6b7280; font-size:13px;">LinkedIn</span><br /><a
+                  href="https://www.linkedin.com/in/manjula-jatavath/" style="font-size:14px; color:#e040c8;"
+                  target="_blank">Manjula Kethavath</a></div>
+              <div><span style="color:#6b7280; font-size:13px;">GitHub</span><br /><a
+                  href="https://github.com/ManjulaJatavath" style="font-size:14px; color:#e040c8;"
+                  target="_blank">ManjulaJatavath</a></div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span class="badge"><i class="fab fa-python" style="font-size:10px;"></i>Python</span>
+            <span class="badge"><i class="fas fa-cogs" style="font-size:10px;"></i>Django</span>
+            <span class="badge"><i class="fas fa-database" style="font-size:10px;"></i>MySQL</span>
+            <span class="badge"><i class="fab fa-html5" style="font-size:10px;"></i>HTML/CSS</span>
+            <span class="badge"><i class="fab fa-js" style="font-size:10px;"></i>JavaScript</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Internship Experience Section -->
-<section id="experience" class="internship-section" style="text-align: center; width:100%">
-  <div class="container">
-    <div class="education-item" data-wow-delay="0.1s">
-      <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent;">
-        INTERNSHIP EXPERIENCE
-      </h2>
-    </div>
-    <div class="timeline" style="display: flex; justify-content: space-around; flex-wrap: wrap; align-items:center">
-      <!-- First Internship -->
-      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.1s" style="flex: 1; min-width: 300px; margin: 10px;">
-        <div class="timeline-text">
-          <div class="timeline-date" style="text-align: center;">Dec-2023 - March-2024</div>
-          <h2 style="color: hsl(245, 100%, 50%);">Backend (Python) Intern</h2>
-          <h4 style="color: hsl(322, 86%, 50%);">BAOIAM INNOVATION PVT LTD</h4>
-          <img src="assets/img/baoiam.jpg" alt="BAOIAM Logo" style="width: 100px; height: auto; margin: 10px 0;">
-        </div>
-      </div>
+  </section>
 
-      <!-- Second Internship -->
-      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.3s" style="flex: 1; min-width: 300px; margin: 10px;">
-        <div class="timeline-text">
-          <div class="timeline-date" style="text-align: center;">February-2024 - Jun-2024</div>
-          <h2 style="color: hsl(245, 100%, 50%);">Python Junior intern</h2>
-          <h4 style="color: hsl(322, 86%, 50%);">WORKBEES TECHNOLOGIES</h4>
-            <img style="height: 70px; width: 40%" src="assets/img/workbees.jpg" alt="Workbees Logo" style="width: 130px; height: 157px; margin: -1px 0;">
-        </div>
-      </div>
 
-      <div class="timeline-item center wow slideInCenter" data-wow-delay="3.1s" style="flex: 1; min-width: 300px; margin: 10px;">
-        <div class="timeline-text">
-          <div class="timeline-date" style="text-align: center;">July-2024 - May-2025</div>
-          <h2 style="color: hsl(245, 100%, 50%);">Backend Developer Intern</h2>
-          <h4 style="color: hsl(322, 86%, 50%);">SAT N PAPER</h4>
-          <img style="height:65px; width:100px" src="assets/img/sat n paper.jpeg" alt="SatnPaper Logo" style="width: 100px; height: auto; margin: 10px 0;">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- Acheviements Section -->
-  <section id="experience1" class="internship-section1" style="text-align: center;">
-    <div class="container1">
-      <div class="education-item" data-wow-delay="0.1s">
-        <h2 style="font-size: 2.3rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent;">
-          ACHIEVEMENTS
+  <!-- ═══════════════════ EDUCATION ═══════════════════ -->
+  <section id="education" style="position:relative; z-index:1; padding:100px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; margin-bottom:12px; display:flex;">Education</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">
+          My <span class="grad-text-3">Education</span>
         </h2>
       </div>
-      <div class="timeline">
-        <div class="timeline-item center wow slideInCenter" data-wow-delay="0.1s">
-          <div class="timeline-text">
-              <div class="timeline-date" style="text-align: center;">
-                <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank">
-                <img src="assets\img\hackerrank.jpg" alt="HackerRank Logo" style="width: 100px; height: auto; margin: 12px 0;">
-              </a>
-              </div>
-            <h2 style="color: hsl(154, 100%, 40%);">HackerRank</h2>
-            <h4 style="color: hsl(700, 100%, 30%);">4th Star in Problem Solving</h4> 
+
+      <!-- Timeline -->
+      <div style="position:relative; max-width:860px; margin:0 auto;">
+        <div class="timeline-line"></div>
+
+        <!-- Item 1 -->
+        <div class="anim-hidden"
+          style="display:grid; grid-template-columns:1fr 60px 1fr; gap:0; margin-bottom:48px; align-items:center;">
+          <div class="glass-card" style="padding:28px; text-align:right; margin-right:20px;">
+            <div style="font-size:12px; color:#e040c8; font-weight:600; letter-spacing:1px; margin-bottom:8px;">2018 –
+              2022</div>
+            <h3 style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:4px;">Bachelor's
+              Degree (BSC)</h3>
+            <p style="color:#9999b0; font-size:0.9rem; margin-bottom:4px;">Government Degree College for Women's</p>
+            <p style="color:#6b7280; font-size:0.8rem;">Nalgonda, Telangana</p>
           </div>
+          <div style="display:flex; justify-content:center;">
+            <div class="timeline-dot"></div>
+          </div>
+          <div></div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="anim-hidden"
+          style="display:grid; grid-template-columns:1fr 60px 1fr; gap:0; margin-bottom:48px; align-items:center;">
+          <div></div>
+          <div style="display:flex; justify-content:center;">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="glass-card" style="padding:28px; margin-left:20px;">
+            <div style="font-size:12px; color:#e040c8; font-weight:600; letter-spacing:1px; margin-bottom:8px;">2016 –
+              2018</div>
+            <h3 style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:4px;">Board of
+              Intermediate</h3>
+            <p style="color:#9999b0; font-size:0.9rem; margin-bottom:4px;">Government Junior Girls College</p>
+            <p style="color:#6b7280; font-size:0.8rem;">Devarakonda, Nalgonda, Telangana</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="anim-hidden" style="display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center;">
+          <div class="glass-card" style="padding:28px; text-align:right; margin-right:20px;">
+            <div style="font-size:12px; color:#e040c8; font-weight:600; letter-spacing:1px; margin-bottom:8px;">2015 –
+              2016</div>
+            <h3 style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:4px;">Board of
+              Secondary School</h3>
+            <p style="color:#9999b0; font-size:0.9rem; margin-bottom:4px;">Z.P. Girls High School</p>
+            <p style="color:#6b7280; font-size:0.8rem;">Devarakonda, Nalgonda</p>
+          </div>
+          <div style="display:flex; justify-content:center;">
+            <div class="timeline-dot"></div>
+          </div>
+          <div></div>
         </div>
       </div>
     </div>
   </section>
 
 
-    <!-- contact Section -->
-    <section id="contact">
-      <div class="container mt-4 p-2">
-        <h2 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">
-          CONTACT FORM
-        </h2>
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <h3 class="text-white bg-dark text-center p-3">Contact Me</h3>
-            <div class="card p-2">
-              <form id="contactForm" method="post" name="google-sheet">
-                <div class="form-group">
-                  <h5><span><i class="fas fa-user"></i> Your Name</span></h5>
-                  <input type="text" class="form-control mb-3" name="name" required />
-                </div>
-    
-                <div class="form-group">
-                  <h5><span><i class="fas fa-envelope"></i> Email</span></h5>
-                  <input type="email" class="form-control mb-3" name="email" required />
-                </div>
-    
-                <div class="form-group">
-                  <h5><span><i class="fa fa-phone"></i> Phone Number</span></h5>
-                  <input type="tel" class="form-control mb-3" name="num" required />
-                </div>
-    
-                <div class="form-group">
-                  <h5><span><i class="fas fa-envelope"></i> Message</span></h5>
-                  <textarea class="form-control mb-3" name="message" rows="5" required></textarea>
-                </div>
-    
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-dark">Send Message</button>
-                </div>
-              </form>
-            </div>
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section id="skills" style="position:relative; z-index:1; padding:100px 0; background:rgba(255,255,255,0.015);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Expertise</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">My <span
+            class="grad-text-3">Skills</span></h2>
+        <p style="color:#6b7280; margin-top:12px; font-size:0.95rem;">Here are my skills to represent my expertise</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px;" id="skills-grid">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" style="position:relative; z-index:1; padding:100px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Portfolio</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">My <span
+            class="grad-text-3">Projects</span></h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;"
+        id="projects-grid">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+  <section id="experience" style="position:relative; z-index:1; padding:100px 0; background:rgba(255,255,255,0.015);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Career</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">Experience</h2>
+      </div>
+
+      <!-- Current Role -->
+      <div class="anim-hidden" style="margin-bottom:60px;">
+        <div
+          style="font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#00e5ff; margin-bottom:20px; text-align:center; font-weight:600;">
+          Current Position</div>
+        <div class="exp-card"
+          style="max-width:500px; margin:0 auto; text-align:center; border-color:rgba(0,229,255,0.2);">
+          <div
+            style="display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:16px; background:rgba(0,229,255,0.1); border:1px solid rgba(0,229,255,0.2); margin-bottom:16px;">
+            <i class="fas fa-code" style="color:#00e5ff; font-size:22px;"></i>
           </div>
-          <div class="col-md-4"></div>
+          <div style="font-size:12px; color:#00e5ff; font-weight:600; letter-spacing:1px; margin-bottom:8px;">June 2025
+            – Present</div>
+          <h3 style="font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:700; margin-bottom:6px;">Full Stack
+            Developer</h3>
+          <p style="color:#e040c8; font-weight:500; font-size:0.95rem;">SAT N PAPER</p>
         </div>
       </div>
-    </section>
-<!-- <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWi7hIlpcUvugCYVv6zrh5n5EQGvkbK7K85LUDOeCE1d8N5HTJ9j318YBwnbzCyhJa/exec';
-  const form = document.forms['google-sheet'];
-  const submitButton = form.querySelector('button[type="submit"]');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    submitButton.disabled = true;
-    submitButton.innerText = 'Sending...';
+      <!-- Internships -->
+      <div class="anim-hidden" style="margin-bottom:32px;">
+        <div
+          style="font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#e040c8; margin-bottom:20px; text-align:center; font-weight:600;">
+          Internship Experience</div>
+      </div>
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        alert("Thanks for contacting me! Your Details Saved Successfully.");
-        
-        form.reset();
-        submitButton.disabled = false;
-        submitButton.innerText = 'Send Message';
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        alert('There was an error sending your message. Please try again.');
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;"
+        class="anim-hidden">
+        <div class="exp-card">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+            <div
+              style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(224,64,200,0.1); border:1px solid rgba(224,64,200,0.2); flex-shrink:0;">
+              <i class="fas fa-briefcase" style="color:#e040c8; font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-size:11px; color:#e040c8; font-weight:600; letter-spacing:1px;">Dec 2023 – Mar 2024</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:6px;">Backend
+            (Python) Intern</h3>
+          <p style="color:#9999b0; font-size:0.9rem;">BAOIAM INNOVATION PVT LTD</p>
+        </div>
 
-        // Re-enable the button in case of an error
-        submitButton.disabled = false;
-        submitButton.innerText = 'Send Message';
-      });
-  });
-</script> -->
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWi7hIlpcUvugCYVv6zrh5n5EQGvkbK7K85LUDOeCE1d8N5HTJ9j318YBwnbzCyhJa/exec';
-  const form = document.forms['google-sheet'];
-  const submitButton = form.querySelector('button[type="submit"]');
-  const messageContainer = document.createElement('div');
-  form.appendChild(messageContainer);
+        <div class="exp-card">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+            <div
+              style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(224,64,200,0.1); border:1px solid rgba(224,64,200,0.2); flex-shrink:0;">
+              <i class="fas fa-briefcase" style="color:#e040c8; font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-size:11px; color:#e040c8; font-weight:600; letter-spacing:1px;">Feb 2024 – Jun 2024</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:6px;">Python
+            Junior Intern</h3>
+          <p style="color:#9999b0; font-size:0.9rem;">WORKBEES TECHNOLOGIES</p>
+        </div>
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    
-    submitButton.disabled = true;
-    submitButton.innerText = 'Sending...';
-    
-    // Show a loading message
-    messageContainer.innerHTML = '<p style="font-size: 1rem;color:green">Submitting your data...</p>';
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        if (response.ok) {
-          messageContainer.innerHTML = '<p style="font-size: 1rem;color:blue">Thanks for contacting me! Your details have been saved successfully.</p>';
-          form.reset();
-        } else {
-          messageContainer.innerHTML = '<p style="font-size: 1rem;">There was a problem with your submission. Please try again later.</p>';
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        messageContainer.innerHTML = '<p>There was an error sending your message. Please try again later.</p>';
-      })
-      .finally(() => {
-        submitButton.disabled = false;
-        submitButton.innerText = 'Send Message';
-      });
-  });
-</script>
+        <div class="exp-card">
+          <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+            <div
+              style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(224,64,200,0.1); border:1px solid rgba(224,64,200,0.2); flex-shrink:0;">
+              <i class="fas fa-briefcase" style="color:#e040c8; font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-size:11px; color:#e040c8; font-weight:600; letter-spacing:1px;">Jul 2024 – May 2025</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:6px;">Backend
+            Developer Intern</h3>
+          <p style="color:#9999b0; font-size:0.9rem;">SAT N PAPER</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-</main>
+  <!-- ═══════════════════ ACHIEVEMENTS ═══════════════════ -->
+  <section id="achievements" style="position:relative; z-index:1; padding:100px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Awards</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">Achievements</h2>
+      </div>
 
-<!-- JavaScript for Dark Mode -->
-<script>
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const darkModeIcon = document.getElementById('darkModeIcon');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            darkModeIcon.classList.remove('fa-moon');
-            darkModeIcon.classList.add('fa-sun');
-        } else {
-            darkModeIcon.classList.remove('fa-sun');
-            darkModeIcon.classList.add('fa-moon');
-        }
+      <div style="display:flex; justify-content:center;" class="anim-hidden">
+        <div class="achieve-card" style="max-width:400px; width:100%;">
+          <div style="font-size:48px; margin-bottom:16px;">⭐⭐⭐⭐</div>
+          <div style="font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:800; margin-bottom:8px;"
+            class="grad-text">4-Star HackerRank</div>
+          <p style="color:#9999b0; margin-bottom:20px; font-size:0.9rem;">Problem Solving — 4th Star achieved</p>
+          <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank" class="btn-primary-glow"
+            style="display:inline-flex;">
+            <i class="fab fa-hackerrank"></i> View Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ CERTIFICATES ═══════════════════ -->
+  <section id="certificates" style="position:relative; z-index:1; padding:100px 0; background:rgba(255,255,255,0.015);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Credentials</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">Certificates &
+          Documents</h2>
+      </div>
+
+      <!-- Course Certificates -->
+      <div class="anim-hidden" style="margin-bottom:56px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+          <div style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; color:#e8e8f0;">Course
+            Certificates</div>
+          <div style="flex:1; height:1px; background:rgba(255,255,255,0.06);"></div>
+          <span class="badge">6 Certificates</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;"
+          id="course-certs-grid"></div>
+      </div>
+
+      <!-- Offer Letters -->
+      <div class="anim-hidden" style="margin-bottom:56px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+          <div style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; color:#e8e8f0;">Offer Letters
+          </div>
+          <div style="flex:1; height:1px; background:rgba(255,255,255,0.06);"></div>
+          <span class="badge">2 Letters</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;"
+          id="offer-letters-grid"></div>
+      </div>
+
+      <!-- Internship Certificates -->
+      <div class="anim-hidden">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+          <div style="font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; color:#e8e8f0;">Internship
+            Certificates</div>
+          <div style="flex:1; height:1px; background:rgba(255,255,255,0.06);"></div>
+          <span class="badge">2 Certificates</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;"
+          id="internship-certs-grid"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact" style="position:relative; z-index:1; padding:100px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:64px;" class="anim-hidden">
+        <div class="section-label" style="justify-content:center; display:flex;">Get in Touch</div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800;">Contact <span
+            class="grad-text">Me</span></h2>
+      </div>
+
+      <div style="max-width:560px; margin:0 auto;" class="anim-hidden">
+        <div class="glass-card" style="padding:40px;">
+          <form id="contactForm" name="google-sheet">
+            <div style="margin-bottom:20px;">
+              <label style="font-size:13px; color:#6b7280; display:block; margin-bottom:8px; font-weight:500;"><i
+                  class="fas fa-user" style="margin-right:6px; color:#e040c8;"></i>Your Name</label>
+              <input type="text" name="name" required class="form-input" placeholder="Manjula Kethavath" />
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="font-size:13px; color:#6b7280; display:block; margin-bottom:8px; font-weight:500;"><i
+                  class="fas fa-envelope" style="margin-right:6px; color:#e040c8;"></i>Email</label>
+              <input type="email" name="email" required class="form-input" placeholder="you@example.com" />
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="font-size:13px; color:#6b7280; display:block; margin-bottom:8px; font-weight:500;"><i
+                  class="fas fa-phone" style="margin-right:6px; color:#e040c8;"></i>Phone Number</label>
+              <input type="tel" name="num" required class="form-input" placeholder="+91 xxxxxxxxxx" />
+            </div>
+            <div style="margin-bottom:28px;">
+              <label style="font-size:13px; color:#6b7280; display:block; margin-bottom:8px; font-weight:500;"><i
+                  class="fas fa-comment" style="margin-right:6px; color:#e040c8;"></i>Message</label>
+              <textarea name="message" rows="5" required class="form-input" style="resize:vertical;"
+                placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-primary-glow"
+              style="width:100%; justify-content:center; font-size:15px;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div id="formMsg" style="margin-top:16px; font-size:14px; text-align:center; display:none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer
+    style="background:#070710; border-top:1px solid rgba(255,255,255,0.06); padding:32px 24px; text-align:center; position:relative; z-index:1;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.2rem; margin-bottom:8px;"
+        class="grad-text">Manjula Kethavath</div>
+      <p style="color:#6b7280; font-size:13px; margin-bottom:16px;">Python Developer · Django · Full Stack</p>
+      <div style="display:flex; justify-content:center; gap:10px; margin-bottom:20px;">
+        <a href="https://github.com/ManjulaJatavath" target="_blank" class="social-btn"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/manjula-jatavath/" target="_blank" class="social-btn"><i
+            class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.hackerrank.com/profile/jatavathmanjula3" target="_blank" class="social-btn"><i
+            class="fab fa-hackerrank"></i></a>
+      </div>
+      <p style="color:#555570; font-size:12px;">© Manjula Portfolio · Designed with <span
+          style="color:#e040c8;">♥</span> by Manjula Kethavath</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // ── Typewriter ──
+    const roles = ["Python Developer", "Frontend Developer", "Full Stack Developer", "Django Developer"];
+    let ri = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typed-role');
+    function type() {
+      const r = roles[ri];
+      if (deleting) { el.textContent = r.slice(0, ci--); if (ci < 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(type, 400); return; } }
+      else { el.textContent = r.slice(0, ++ci); if (ci === r.length) { deleting = true; setTimeout(type, 1800); return; } }
+      setTimeout(type, deleting ? 60 : 120);
+    }
+    type();
+
+    // ── Mobile nav ──
+    function toggleMobile() {
+      const m = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const isOpen = m.classList.contains('open');
+      m.classList.toggle('open');
+      btn.innerHTML = isOpen
+        ? '<i class="fas fa-bars"></i>'
+        : '<i class="fas fa-times"></i>';
+    }
+
+    // ── Dark toggle (keep body dark by default) ──
+    function toggleDark() {
+      const isLight = document.body.classList.contains('light');
+      const icon = document.getElementById('darkToggleBtn').querySelector('i');
+      if (isLight) {
+        document.body.classList.remove('light');
+        icon.className = 'fas fa-moon';
+      } else {
+        document.body.classList.add('light');
+        icon.className = 'fas fa-sun';
+      }
+      // Reset all nav link styles on toggle
+      navLinks.forEach(l => { l.style.color = ''; l.style.background = ''; });
+    }
+
+
+    // ── Skills data ──
+    const skills = [
+      { name: 'Python Programming', pct: 90, icon: 'fab fa-python' },
+      { name: 'HTML', pct: 90, icon: 'fab fa-html5' },
+      { name: 'Django Framework', pct: 90, icon: 'fas fa-cogs' },
+      { name: 'CSS', pct: 80, icon: 'fab fa-css3-alt' },
+      { name: 'Django REST API', pct: 90, icon: 'fas fa-plug' },
+      { name: 'JavaScript', pct: 70, icon: 'fab fa-js' },
+      { name: 'React.js', pct: 75, icon: 'fab fa-react' },
+      { name: 'Next.js', pct: 70, icon: 'fas fa-code' },
+      { name: 'MySQL', pct: 85, icon: 'fas fa-database' },
+      { name: 'Communication', pct: 90, icon: 'fas fa-comments' },
+      { name: 'MS Office', pct: 90, icon: 'fas fa-file-alt' },
+      { name: 'Problem Solving', pct: 90, icon: 'fas fa-lightbulb' },
+    ];
+    const sg = document.getElementById('skills-grid');
+    skills.forEach(s => {
+      sg.innerHTML += `
+      <div class="glass-card" style="padding:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <i class="${s.icon}" style="color:#e040c8; font-size:16px; width:20px; text-align:center;"></i>
+            <span style="font-size:14px; font-weight:500;">${s.name}</span>
+          </div>
+          <span style="font-size:13px; font-weight:700;" class="grad-text">${s.pct}%</span>
+        </div>
+        <div class="skill-track"><div class="skill-fill" style="width:0%" data-pct="${s.pct}"></div></div>
+      </div>`;
     });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-<script>
-  let output = document.getElementById("name");
-  console.log(output);
-  const phrases = ["Python Developer","Frontend Developer", "Full Stack Developer", "Django Developer"];
-  let count = 0;
-  let value = 0;
-  const p = 150;
-  const q = 75;
-  function print(phrase) {
-    if (count == phrase.length) {
-        clear();
+
+    // ── Projects data ──
+    const projects = [
+      { name: 'SKIN-SAVIOUR', img: 'assets/img/Skin-Saviour.png', desc: "An innovative platform where users discover their skin's unique needs through an engaging quiz experience.", url: 'https://skin-saviour.netlify.app', tag: 'Web App' },
+      { name: 'MR. RESTAURANT', img: 'assets/img/restaurant.png', desc: 'Showcases restaurant offerings and facilitates customer engagement through a user-friendly interface.', url: 'https://restaurant-website-psi-ten.vercel.app/', tag: 'Website' },
+      { name: 'EMP MANAGEMENT', img: 'assets/img/emp-management.png', desc: 'Core functionalities for managing employee records with CRUD operations and pre-authentication filtering.', url: 'https://office-employee-management-system-8kq1.onrender.com/', tag: 'Django' },
+      { name: 'VENDOR MANAGEMENT', img: 'assets/img/Vendor_managment.png', desc: 'Streamlines vendor coordination, tracking, and performance evaluation functionalities.', url: 'https://github.com/ManjulaJatavath/Vendor-Management-system', tag: 'Backend' },
+      { name: 'STUDENT MANAGEMENT', img: 'assets/img/student.png', desc: 'Django-based CRUD operations with Django, Python, HTML and CSS for student data manipulation.', url: 'https://github.com/ManjulaJatavath/Django-Student-management-project', tag: 'Django' },
+      { name: 'TO-DO APP', img: 'assets/img/to-do app.png', desc: 'Manju Study Planner — a web application to create and manage study schedules effectively.', url: 'https://manjulajatavath.github.io/TO-DO-App/', tag: 'JavaScript' },
+    ];
+    const pg = document.getElementById('projects-grid');
+    projects.forEach(p => {
+      pg.innerHTML += `
+      <div class="proj-card">
+        <div style="padding:16px 16px 0;">
+          <div style="overflow:hidden; border-radius:12px; margin-bottom:0;">
+            <img src="${p.img}" alt="${p.name}" class="proj-img" onerror="this.style.background='linear-gradient(135deg,#e040c820,#f5a62320)'; this.style.display='block';" />
+          </div>
+        </div>
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <h3 style="font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:#e8e8f0;">${p.name}</h3>
+            <span style="font-size:10px; letter-spacing:1px; text-transform:uppercase; background:rgba(224,64,200,0.1); color:#e040c8; padding:3px 10px; border-radius:999px; font-weight:600; flex-shrink:0;">${p.tag}</span>
+          </div>
+          <p style="font-size:13px; color:#6b7280; line-height:1.6; margin-bottom:16px;">${p.desc}</p>
+          <a href="${p.url}" target="_blank" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:#e040c8; font-weight:600; text-decoration:none; transition:gap 0.2s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+            Check it Out <i class="fas fa-arrow-right" style="font-size:11px;"></i>
+          </a>
+        </div>
+      </div>`;
+    });
+
+    // ── Certificates data ──
+    const courseCerts = [
+      { title: 'Python from Udemy', url: 'assets/Doc/Course_certificates/UC-cerificate.pdf', type: 'pdf' },
+      { title: 'Django from Simplilearn', url: 'assets/Doc/Course_certificates/thumb_5066474_1713777282 (1).png', type: 'image' },
+      { title: 'MySQL from Great Learning', url: 'assets/Doc/Course_certificates/Manjula_Jatavath20230901-72-umci6p.jpg', type: 'image' },
+      { title: 'HTML from Scaler', url: 'assets/Doc/Course_certificates/HTML.png', type: 'image' },
+      { title: 'Python from HackerRank', url: 'assets/Doc/Course_certificates/HackerRank.png', type: 'image' },
+      { title: 'Python from SoloLearn', url: 'assets/Doc/Course_certificates/Certificate.jpg', type: 'image' },
+    ];
+    const offerLetters = [
+      { title: 'Offer Letter — SAT N PAPER', url: 'assets/Doc/Offer_Letters/Offer For Internship - Kethavath Manjula from SAT-N-PAPAER.pdf', type: 'pdf' },
+      { title: 'Offer Letter — Baoiam', url: 'assets/Doc/Offer_Letters/OL Manjula from Baioam.pdf', type: 'pdf' },
+    ];
+    const internshipCerts = [
+      { title: 'Certificate — Baoiam Innovation', url: 'assets/Doc/Internship Certificates/Manjula Jatavath  Baoiam Certificate.pdf', type: 'pdf' },
+      { title: 'Certificate — Workbees OPC', url: 'assets/Doc/Internship Certificates/Manjula Kethavath Workbees Certficate.pdf', type: 'pdf' },
+    ];
+
+    function renderCerts(data, containerId) {
+      const c = document.getElementById(containerId);
+      data.forEach(d => {
+        const preview = d.type === 'image'
+          ? `<img src="${d.url}" alt="${d.title}" style="width:100%; height:100%; object-fit:cover;" />`
+          : `<iframe src="${d.url}" style="width:100%; height:100%; border:none;" title="${d.title}"></iframe>`;
+        c.innerHTML += `
+        <div class="cert-card">
+          <div class="doc-preview-wrap">${preview}</div>
+          <p style="font-size:13px; color:#9999b0; margin-bottom:12px; line-height:1.4;">${d.title}</p>
+          <a href="${d.url}" target="_blank" download style="font-size:12px; font-weight:600; color:#e040c8; text-decoration:none; border:1px solid rgba(224,64,200,0.3); padding:6px 16px; border-radius:8px; transition:all 0.3s; display:inline-block;" onmouseover="this.style.background='rgba(224,64,200,0.1)'" onmouseout="this.style.background='transparent'">Preview</a>
+        </div>`;
+      });
     }
-    else if (count < (phrase.length)) {
-        output.textContent += phrase.charAt(count);
-        count += 1;
-        setTimeout(function () {
-            print(phrase)
-        }, p);
-    }
-}
-function clear() {
-    
-    if (count == -1) {
-        value =(value+1)%phrases.length;
-        count = 0;
-        print(phrases[value]);
-    }
-    else if (count > -1) {
-        let duplicate = "";
-        for (let index = 0; index < count; index++) {
-            duplicate += phrases[value].charAt(index);
+    renderCerts(courseCerts, 'course-certs-grid');
+    renderCerts(offerLetters, 'offer-letters-grid');
+    renderCerts(internshipCerts, 'internship-certs-grid');
+
+    // ── Animate on scroll ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('anim-visible');
+          e.target.classList.remove('anim-hidden');
+          // Animate skills bars
+          e.target.querySelectorAll('.skill-fill').forEach(bar => {
+            bar.style.width = bar.dataset.pct + '%';
+          });
         }
-        output.textContent = duplicate;
-        count=count-1;
-        setTimeout(clear, q);
-    }
-}
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.anim-hidden').forEach(el => observer.observe(el));
 
-print(phrases[value]);
-</script>
-<section class="certificates" id="certificates">
-  <h1 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to bottom, hsl(311, 98%, 35%) 40%, hsl(100, 55%, 32%) 60%, hsl(31, 88%, 44%)); background-clip: text; color: transparent; text-align:center">My Certificates and Documents</h1>
-  <div class="category" id="course-certificates">
-    <h2>Course Certificates</h2>
-    <div class="document-container" id="course-certificate-container"></div>
-  </div>
-  <div class="category" id="offer-letters">
-    <h2>Offer Letters</h2>
-    <div class="document-container" id="offer-letter-container"></div>
-  </div>
-  <div class="category" id="internship-certificates">
-    <h2>Internship Certificates</h2>
-    <div class="document-container" id="internship-certificate-container"></div>
-  </div>
-</section>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+    // Also trigger skill bars when section comes into view
+    const skillsSection = document.getElementById('skills');
+    const skillObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.skill-fill').forEach(b => { b.style.width = b.dataset.pct + '%'; });
+      }
+    }, { threshold: 0.2 });
+    if (skillsSection) skillObs.observe(skillsSection);
 
-    const documents = {
-        'offer_letters': [
-            { title: 'Offer Letter from SAT nPaper', url: 'assets/Doc/Offer_Letters/Offer For Internship - Kethavath Manjula from SAT-N-PAPAER.pdf',type: 'pdf' },
-            { title: 'Offer Letter from Baoiam', url: 'assets/Doc/Offer_Letters/OL Manjula from Baioam.pdf', type: 'pdf' }
-        ],
-        'internship_certificates': [
-            { title: 'Internship Certificate from Boaim Innovation PVT LTD', url: 'assets/Doc/Internship Certificates/Manjula Jatavath  Baoiam Certificate.pdf',type: 'pdf' },
-            { title: 'Internship Certificate from Workbees OPC PVT LTD', url: 'assets/Doc/Internship Certificates/Manjula Kethavath Workbees Certficate.pdf' , type: 'pdf'}
-        ],
-        'course_certificates': [
-            { title: 'Python from Udemy', url: 'assets/Doc/Course_certificates/UC-cerificate.pdf',type: 'pdf' },
-            { title: 'Django from Simplelearn', url: 'assets/Doc/Course_certificates/thumb_5066474_1713777282 (1).png',type: 'image' },
-            { title: 'MySQL from Great Learning', url: 'assets/Doc/Course_certificates/Manjula_Jatavath20230901-72-umci6p.jpg',type: 'image' },
-            { title: 'HTML from Scaler', url: 'assets/Doc/Course_certificates/HTML.png',type: 'image' },
-            { title: 'Python from HackerRank', url: 'assets/Doc/Course_certificates/HackerRank.png',type: 'image' },
-            { title: 'Python from SoloLearn Platform', url: 'assets/Doc/Course_certificates/Certificate.jpg',type: 'image' },
-        ]
-    };
+    // ── Contact form ──
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxWi7hIlpcUvugCYVv6zrh5n5EQGvkbK7K85LUDOeCE1d8N5HTJ9j318YBwnbzCyhJa/exec';
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(r => {
+          formMsg.style.display = 'block';
+          if (r.ok) {
+            formMsg.innerHTML = '<span style="color:#00e5ff;">✓ Thanks for reaching out! Your details saved successfully.</span>';
+            form.reset();
+          } else {
+            formMsg.innerHTML = '<span style="color:#e040c8;">There was a problem. Please try again later.</span>';
+          }
+        })
+        .catch(() => { formMsg.style.display = 'block'; formMsg.innerHTML = '<span style="color:#e040c8;">Error sending message. Please try again.</span>'; })
+        .finally(() => { submitBtn.disabled = false; submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message'; });
+    });
 
-    const categories = {
-        'offer_letters': 'offer-letter-container',
-        'internship_certificates': 'internship-certificate-container',
-        'course_certificates': 'course-certificate-container'
-    };
+    // ── Show floating card on large screens ──
+    if (window.innerWidth > 1100) { document.getElementById('hero-float-card').style.display = 'block'; }
 
-    function loadDocuments(category, containerId) {
-        const container = document.getElementById(containerId);
-        documents[category].forEach(doc => {
-            const docCard = document.createElement('div');
-            docCard.className = 'document-card';
-            // Document preview and title
-            let preview = '';
-            if (doc.type === 'image') {
-                preview = `<img src="${doc.url}" alt="${doc.title}" class="doc-preview">`;
-            } else if (doc.type === 'pdf') {
-                preview = `<iframe src="${doc.url}" class="pdf-preview" frameborder="0"></iframe>`;
-            }
-
-            docCard.innerHTML = `
-                <div class="doc-preview-container">
-                    ${preview}
-                </div>
-                <h3>${doc.title}</h3>
-                <a href="${doc.url}" download>Preview</a>
-            `;
-            container.appendChild(docCard);
-        });
-    }
-
-    for (const [category, containerId] of Object.entries(categories)) {
-        loadDocuments(category, containerId);
-    }
-});
-</script>
+    // ── Active nav highlight ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+      const isLight = document.body.classList.contains('light');
+      navLinks.forEach(l => {
+        if (l.getAttribute('href') === '#' + cur) {
+          l.style.color = '#fff';              // white text
+          l.style.background = '#ff4da6';      // pink background (you can tweak shade)
+        } else {
+          l.style.color = '';
+          l.style.background = '';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="container">
-          <div class="copyright">
-              &copy; <strong><span>Manjula Portfolio</span></strong>
-          </div>
-          <div class="credits">
-              Designed by <span style="color: red; font-size: 20px;">&hearts;</span><a href="index.html">Manjula Kethavath</a><span style="color: red; font-size: 20px;">&hearts;</span>
-          </div>
-      </div>
-    </footer>
